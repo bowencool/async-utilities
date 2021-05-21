@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "module": "esnext",
+    "strict": true,
+    "declaration": true,
+    "noImplicitAny": true,
+    "noImplicitThis": true,
+    "removeComments": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "allowSyntheticDefaultImports": true,
+    "target": "es2017",
+    "sourceMap": true,
+    "outDir": "./dist",
+    "baseUrl": "./",
+    "paths": {
+      "@/*": ["src/*"],
+      "src/*": ["src/*"]
+    },
+    "lib": ["esnext", "dom", "DOM.Iterable"]
+  },
+  "locale": "zh-CN",
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "**/*.spec.ts", "example/**/*"]
+}
