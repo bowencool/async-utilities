@@ -5,7 +5,7 @@ import { concurrentAsync } from '../../src';
 function rawApi<T>(data: T): Promise<T> {
   const delay = (1 + Math.random() * 3).toFixed(3);
   console.log('fetch start:', data);
-  return fetch(`https://httpbin.org/delay/${delay}?t=${delay}`, {
+  return fetch(`https://httpbin.org/delay/${delay}?i=${data}`, {
     method: 'GET',
     mode: 'cors',
   }).then(() => data);
