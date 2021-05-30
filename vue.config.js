@@ -1,5 +1,6 @@
 module.exports = {
   outputDir: 'docs',
+  publicPath: './',
   // en
   pages: {
     index: {
