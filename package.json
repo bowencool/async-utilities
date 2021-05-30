@@ -7,7 +7,7 @@
     "dev": "NODE_ENV=development vue-cli-service serve",
     "build": "NODE_ENV=production rollup --config build/rollup.config.js",
     "build:doc": "NODE_ENV=production vue-cli-service build",
-    "prepublishOnly": "npm run build && npm run build:doc",
+    "prepublishOnly": "npm run build",
     "prettier": "prettier --write ./src/**/* && prettier --write ./example/**/*",
     "start": "npm run dev",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -37,7 +37,7 @@
   "jsdelivr": "dist/async-utils.min.js",
   "types": "dist/index.d.ts",
   "license": "MIT",
-  "description": "async utils debounce ",
+  "description": "async utils debounce",
   "author": "bowencool",
   "name": "bowen-async-utils",
   "version": "0.3.0"
