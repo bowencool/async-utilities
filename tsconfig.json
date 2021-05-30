@@ -1,25 +1,30 @@
 {
   "compilerOptions": {
+    "target": "esnext",
     "module": "esnext",
     "strict": true,
     "declaration": true,
     "noImplicitAny": true,
     "noImplicitThis": true,
-    "removeComments": true,
-    "experimentalDecorators": true,
-    "emitDecoratorMetadata": true,
+    "jsx": "preserve",
+    "importHelpers": true,
+    "moduleResolution": "node",
+    "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
-    "target": "es2017",
     "sourceMap": true,
     "outDir": "./dist",
-    "baseUrl": "./",
+    "baseUrl": ".",
+    "types": ["webpack-env"],
     "paths": {
       "@/*": ["src/*"],
       "src/*": ["src/*"]
     },
-    "lib": ["esnext", "dom", "DOM.Iterable"]
+    "lib": ["esnext", "dom", "dom.iterable", "scripthost"]
   },
   "locale": "zh-CN",
-  "include": ["src/**/*"],
-  "exclude": ["node_modules", "**/*.spec.ts", "example/**/*"]
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx"
+  ],
+  "exclude": ["node_modules"]
 }
