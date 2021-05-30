@@ -8,7 +8,7 @@ module.exports = merge(baseConfig, {
   mode: 'production',
   entry: resolve('example/index.ts'),
   output: {
-    path: resolve('doc'),
+    path: resolve('docs'),
     publicPath: './'
   },
   plugins: [
