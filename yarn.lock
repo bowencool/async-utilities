@@ -213,6 +213,11 @@
   resolved "https://registry.npm.taobao.org/@babel/helper-validator-identifier/download/@babel/helper-validator-identifier-7.12.11.tgz#c9a1f021917dcb5ccf0d4e453e399022981fc9ed"
   integrity sha1-yaHwIZF9y1zPDU5FPjmQIpgfye0=
 
+"@babel/helper-validator-identifier@^7.14.0":
+  version "7.14.0"
+  resolved "https://registry.npmjs.org/@babel/helper-validator-identifier/-/helper-validator-identifier-7.14.0.tgz#d26cad8a47c65286b15df1547319a5d0bcf27288"
+  integrity sha512-V3ts7zMSu5lfiwWDVWzRDGIN+lnCEUdaXgtVHJgLb1rGaA6jMrtB9EmE7L18foXJIE8Un/A/h6NJfGQp/e1J4A==
+
 "@babel/helper-validator-option@^7.12.1", "@babel/helper-validator-option@^7.12.11":
   version "7.12.11"
   resolved "https://registry.npm.taobao.org/@babel/helper-validator-option/download/@babel/helper-validator-option-7.12.11.tgz#d66cb8b7a3e7fe4c6962b32020a131ecf0847f4f"
@@ -245,6 +250,11 @@
     "@babel/helper-validator-identifier" "^7.10.4"
     chalk "^2.0.0"
     js-tokens "^4.0.0"
+
+"@babel/parser@^7.12.0":
+  version "7.14.4"
+  resolved "https://registry.npmjs.org/@babel/parser/-/parser-7.14.4.tgz#a5c560d6db6cd8e6ed342368dea8039232cbab18"
+  integrity sha512-ArliyUsWDUqEGfWcmzpGUzNfLxTdTp6WU4IuP6QFSp9gGfWS6boxFCkJSJ/L4+RG8z/FnIU3WxCk6hPL9SSWeA==
 
 "@babel/parser@^7.12.10", "@babel/parser@^7.12.11", "@babel/parser@^7.12.7":
   version "7.12.11"
@@ -814,6 +824,14 @@
     lodash "^4.17.19"
     to-fast-properties "^2.0.0"
 
+"@babel/types@^7.12.0":
+  version "7.14.4"
+  resolved "https://registry.npmjs.org/@babel/types/-/types-7.14.4.tgz#bfd6980108168593b38b3eb48a24aa026b919bc0"
+  integrity sha512-lCj4aIs0xUefJFQnwwQv2Bxg7Omd6bgquZ6LGC+gGMh6/s5qDVfjuCMlDmYQ15SLsWHd9n+X3E75lKIhl5Lkiw==
+  dependencies:
+    "@babel/helper-validator-identifier" "^7.14.0"
+    to-fast-properties "^2.0.0"
+
 "@rollup/plugin-babel@^5.2.2":
   version "5.2.2"
   resolved "https://registry.npm.taobao.org/@rollup/plugin-babel/download/@rollup/plugin-babel-5.2.2.tgz#e5623a01dd8e37e004ba87f2de218c611727d9b2"
@@ -906,6 +924,54 @@
     "@types/uglify-js" "*"
     "@types/webpack-sources" "*"
     source-map "^0.6.0"
+
+"@vue/compiler-core@3.0.11":
+  version "3.0.11"
+  resolved "https://registry.npmjs.org/@vue/compiler-core/-/compiler-core-3.0.11.tgz#5ef579e46d7b336b8735228758d1c2c505aae69a"
+  integrity sha512-6sFj6TBac1y2cWCvYCA8YzHJEbsVkX7zdRs/3yK/n1ilvRqcn983XvpBbnN3v4mZ1UiQycTvOiajJmOgN9EVgw==
+  dependencies:
+    "@babel/parser" "^7.12.0"
+    "@babel/types" "^7.12.0"
+    "@vue/shared" "3.0.11"
+    estree-walker "^2.0.1"
+    source-map "^0.6.1"
+
+"@vue/compiler-dom@3.0.11":
+  version "3.0.11"
+  resolved "https://registry.npmjs.org/@vue/compiler-dom/-/compiler-dom-3.0.11.tgz#b15fc1c909371fd671746020ba55b5dab4a730ee"
+  integrity sha512-+3xB50uGeY5Fv9eMKVJs2WSRULfgwaTJsy23OIltKgMrynnIj8hTYY2UL97HCoz78aDw1VDXdrBQ4qepWjnQcw==
+  dependencies:
+    "@vue/compiler-core" "3.0.11"
+    "@vue/shared" "3.0.11"
+
+"@vue/reactivity@3.0.11":
+  version "3.0.11"
+  resolved "https://registry.npmjs.org/@vue/reactivity/-/reactivity-3.0.11.tgz#07b588349fd05626b17f3500cbef7d4bdb4dbd0b"
+  integrity sha512-SKM3YKxtXHBPMf7yufXeBhCZ4XZDKP9/iXeQSC8bBO3ivBuzAi4aZi0bNoeE2IF2iGfP/AHEt1OU4ARj4ao/Xw==
+  dependencies:
+    "@vue/shared" "3.0.11"
+
+"@vue/runtime-core@3.0.11":
+  version "3.0.11"
+  resolved "https://registry.npmjs.org/@vue/runtime-core/-/runtime-core-3.0.11.tgz#c52dfc6acf3215493623552c1c2919080c562e44"
+  integrity sha512-87XPNwHfz9JkmOlayBeCCfMh9PT2NBnv795DSbi//C/RaAnc/bGZgECjmkD7oXJ526BZbgk9QZBPdFT8KMxkAg==
+  dependencies:
+    "@vue/reactivity" "3.0.11"
+    "@vue/shared" "3.0.11"
+
+"@vue/runtime-dom@3.0.11":
+  version "3.0.11"
+  resolved "https://registry.npmjs.org/@vue/runtime-dom/-/runtime-dom-3.0.11.tgz#7a552df21907942721feb6961c418e222a699337"
+  integrity sha512-jm3FVQESY3y2hKZ2wlkcmFDDyqaPyU3p1IdAX92zTNeCH7I8zZ37PtlE1b9NlCtzV53WjB4TZAYh9yDCMIEumA==
+  dependencies:
+    "@vue/runtime-core" "3.0.11"
+    "@vue/shared" "3.0.11"
+    csstype "^2.6.8"
+
+"@vue/shared@3.0.11":
+  version "3.0.11"
+  resolved "https://registry.npmjs.org/@vue/shared/-/shared-3.0.11.tgz#20d22dd0da7d358bb21c17f9bde8628152642c77"
+  integrity sha512-b+zB8A2so8eCE0JsxjL24J7vdGl8rzPQ09hZNhystm+KqSbKcAej1A+Hbva1rCMmTTqA+hFnUSDc5kouEo0JzA==
 
 "@webassemblyjs/ast@1.9.0":
   version "1.9.0"
@@ -1912,6 +1978,11 @@ css-what@^3.2.1:
   resolved "https://registry.npm.taobao.org/css-what/download/css-what-3.4.2.tgz?cache=0&sync_timestamp=1602570970779&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fcss-what%2Fdownload%2Fcss-what-3.4.2.tgz#ea7026fcb01777edbde52124e21f327e7ae950e4"
   integrity sha1-6nAm/LAXd+295SEk4h8yfnrpUOQ=
 
+csstype@^2.6.8:
+  version "2.6.17"
+  resolved "https://registry.npmjs.org/csstype/-/csstype-2.6.17.tgz#4cf30eb87e1d1a005d8b6510f95292413f6a1c0e"
+  integrity sha512-u1wmTI1jJGzCJzWndZo8mk4wnPTZd1eOIYTYvuEyOQGfmDl3TrabCCfKnOC86FZwW/9djqTl933UF/cS425i9A==
+
 cyclist@^1.0.1:
   version "1.0.1"
   resolved "https://registry.npm.taobao.org/cyclist/download/cyclist-1.0.1.tgz#596e9698fd0c80e12038c2b82d6eb1b35b6224d9"
@@ -2279,6 +2350,11 @@ estree-walker@^1.0.1:
   version "1.0.1"
   resolved "https://registry.npm.taobao.org/estree-walker/download/estree-walker-1.0.1.tgz?cache=0&sync_timestamp=1607445447878&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Festree-walker%2Fdownload%2Festree-walker-1.0.1.tgz#31bc5d612c96b704106b477e6dd5d8aa138cb700"
   integrity sha1-MbxdYSyWtwQQa0d+bdXYqhOMtwA=
+
+estree-walker@^2.0.1:
+  version "2.0.2"
+  resolved "https://registry.npmjs.org/estree-walker/-/estree-walker-2.0.2.tgz#52f010178c2a4c117a7757cfe942adb7d2da4cac"
+  integrity sha512-Rfkk/Mp/DL7JVje3u18FxFujQlTNR2q6QfMSMB7AvCBx91NGj/ba3kCfza0f6dVDbw7YlRf/nDrn7pQrCCyQ/w==
 
 esutils@^2.0.2:
   version "2.0.3"
@@ -5213,6 +5289,15 @@ vm-browserify@^1.0.1:
   version "1.1.2"
   resolved "https://registry.npm.taobao.org/vm-browserify/download/vm-browserify-1.1.2.tgz#78641c488b8e6ca91a75f511e7a3b32a86e5dda0"
   integrity sha1-eGQcSIuObKkadfUR56OzKobl3aA=
+
+vue@^3.0.11:
+  version "3.0.11"
+  resolved "https://registry.npmjs.org/vue/-/vue-3.0.11.tgz#c82f9594cbf4dcc869241d4c8dd3e08d9a8f4b5f"
+  integrity sha512-3/eUi4InQz8MPzruHYSTQPxtM3LdZ1/S/BvaU021zBnZi0laRUyH6pfuE4wtUeLvI8wmUNwj5wrZFvbHUXL9dw==
+  dependencies:
+    "@vue/compiler-dom" "3.0.11"
+    "@vue/runtime-dom" "3.0.11"
+    "@vue/shared" "3.0.11"
 
 watchpack-chokidar2@^2.0.1:
   version "2.0.1"

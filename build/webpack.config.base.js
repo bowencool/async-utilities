@@ -7,8 +7,11 @@ module.exports = {
     extensions: ['.ts', '.js', '.json'],
     alias: {
       '@': resolve('src'),
-      'src': resolve('src'),
+      src: resolve('src'),
     },
+  },
+  externals: {
+    vue: 'Vue',
   },
   module: {
     rules: [
