@@ -40,7 +40,7 @@ export default function concurrentAsync<T, P extends any[], R>(
       });
   }
 
-  return function concurrented(this: T, ...rawParams: P): Promise<R> {
+  return function asyncConcurrented(this: T, ...rawParams: P): Promise<R> {
     that = this;
     const defer = new Promise((r: Resolve, j: Reject) => {
       holding.push([rawParams, r, j]);
