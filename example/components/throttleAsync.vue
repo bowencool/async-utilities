@@ -9,7 +9,6 @@
       <li>原文：https://github.com/bowencool/blog/issues/3</li>
     </ul>
     <button @click="onSubmit">submit(click me quickly)</button>
-    <p>open the devtool to see network</p>
   </fieldset>
 </template>
 
