@@ -32,3 +32,6 @@ const throttledApi = throttleAsync(submitApi);
 | debouncedAsync  | 短时间内触发多次，取最后一次触发的结果。  |
 | throttleAsync   | 上一次的 promise 完成之前，不会再次触发。 |
 | concurrentAsync | 限制最大并发数                            |
+
+## TODO
+- [ ] 可手动/超时取消的异步任务
