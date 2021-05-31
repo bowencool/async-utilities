@@ -37,7 +37,7 @@
   "jsdelivr": "dist/async-utils.min.js",
   "types": "dist/index.d.ts",
   "license": "MIT",
-  "description": "async utils debounce",
+  "description": "async utils debounce throttle concurrent",
   "author": "bowencool",
   "name": "bowen-async-utils",
   "version": "0.3.0"
