@@ -39,6 +39,7 @@
   "license": "MIT",
   "homepage": "https://github.com/bowencool/async-utils",
   "keywords": [
+    "typescript",
     "async",
     "promise",
     "utils",

@@ -3,6 +3,15 @@
 > 一个异步工具库，风格以高阶函数为主。
 > [Live Demo](https://bowencool.github.io/async-utils/)
 
+## API
+
+| 函数            | 一句话描述                                   |
+| --------------- | -------------------------------------------- |
+| debouncedAsync  | 短时间内触发多次，取最后一次**触发**的结果。 |
+| throttleAsync   | 上一次的 promise 完成之前，不会再次触发。    |
+| concurrentAsync | 并发限制、自动排队                           |
+| cancelizeAsync  | 超时取消、手动取消                           |
+
 ## 使用
 
 ```sh
@@ -20,16 +29,11 @@ function submitApi(data: object) {
     mode: 'cors',
   });
 }
-const throttledApi = throttleAsync(submitApi);
+const throttledSubmitApi = throttleAsync(submitApi);
+throttledSubmitApi(1);
+throttledSubmitApi(2);
+throttledSubmitApi(3);
+// 2、3 在 1 结束之前不会被提交
 ```
 
 更多使用示例请查看[example/components](./example/components/)
-
-## API
-
-| 函数            | 一句话描述                                   |
-| --------------- | -------------------------------------------- |
-| debouncedAsync  | 短时间内触发多次，取最后一次 `触发` 的结果。 |
-| throttleAsync   | 上一次的 promise 完成之前，不会再次触发。    |
-| concurrentAsync | 并发限制、自动排队                           |
-| cancelizeAsync  | 超时取消、手动取消                           |
