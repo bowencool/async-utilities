@@ -40,5 +40,5 @@
   "description": "async utils debounce throttle concurrent",
   "author": "bowencool",
   "name": "bowen-async-utils",
-  "version": "0.3.1"
+  "version": "0.3.2"
 }
