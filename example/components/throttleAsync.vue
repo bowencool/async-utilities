@@ -3,9 +3,10 @@
     <legend>throttleAsync</legend>
     <ul>
       <li>
-        背景：为防止用户重复提交，我们通常需要维护一个loading变量，然而有时候就是懒。
+        背景：为防止用户重复提交，我们通常需要维护一个 loading 变量，当 loading
+        数量多起来就难搞了（我也想偷懒）。
       </li>
-      <li>需求：站着把钱挣了</li>
+      <li>需求：不需要写 loading，也可以去重</li>
       <li>原文：https://github.com/bowencool/blog/issues/3</li>
     </ul>
     <button @click="onSubmit">submit(click me quickly)</button>
