@@ -37,6 +37,7 @@
   "jsdelivr": "dist/async-utils.min.js",
   "types": "dist/index.d.ts",
   "license": "MIT",
+  "homepage": "https://github.com/bowencool/async-utils",
   "keywords": [
     "async",
     "promise",
