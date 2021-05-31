@@ -3,6 +3,7 @@
   <DebounceAsync />
   <ThrottleAsync />
   <ConcurrentAsync />
+  <CancelizeAsync />
 </template>
 
 <script lang="ts">
@@ -10,6 +11,7 @@ import { defineComponent } from 'vue';
 import DebounceAsync from './components/debounceAsync.vue';
 import ThrottleAsync from './components/throttleAsync.vue';
 import ConcurrentAsync from './components/concurrentAsync.vue';
+import CancelizeAsync from './components/cancelizeAsync.vue';
 
 export default defineComponent({
   name: 'App',
@@ -17,6 +19,7 @@ export default defineComponent({
     DebounceAsync,
     ThrottleAsync,
     ConcurrentAsync,
+    CancelizeAsync,
   },
 });
 </script>
