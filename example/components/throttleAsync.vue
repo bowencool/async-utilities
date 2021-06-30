@@ -10,6 +10,15 @@
       <li>原文：https://github.com/bowencool/blog/issues/3</li>
     </ul>
     <button @click="onSubmit">submit(click me quickly)</button>
+
+    <ul>
+      <li>
+        背景：多个地方需要同一份数据，往往调用（请求）多次。
+      </li>
+      <li>需求：执行（请求）一次，返回同一个结果给多个调用方。</li>
+    </ul>
+    <button @click="onGet">Get something same(useSamePromise)</button>
+
   </fieldset>
 </template>
 
@@ -25,16 +34,33 @@ function submitApi(data: object) {
     mode: 'cors',
   });
 }
-const throttledApi = throttleAsync(submitApi);
+const throttledSubmitApi = throttleAsync(submitApi);
+
+function getApi(keywords: string) {
+  console.log('fetching', keywords);
+  const delay = (0.4 + Math.random() * 2).toFixed(3);
+  return fetch(`https://httpbin.org/delay/${delay}?keywords=${keywords}`, {
+    method: 'GET',
+    mode: 'cors',
+  }).then(() => ({
+    data: `result for ${keywords}`,
+  }));
+}
+
+const throttledGetApi = throttleAsync(getApi, { useSamePromise: true });
 
 export default defineComponent({
   setup() {
     return {
       async onSubmit() {
-        await throttledApi({
+        await throttledSubmitApi({
           msg: 'some data to be sent',
         });
         console.log('submit completed');
+      },
+      async onGet() {
+        const rez = await throttledGetApi('abc');
+        console.log('fetched', rez);
       },
     };
   },
