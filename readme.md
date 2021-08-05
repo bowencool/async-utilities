@@ -37,3 +37,9 @@ throttledSubmitApi(3);
 ```
 
 更多使用示例请查看[example/components](./example/components/)
+
+## TODO
+- [ ] vitepress重构下文档
+- [ ] 单测
+- [ ] 改个名字
+- [ ] feat: retry
