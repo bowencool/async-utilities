@@ -1,3 +1,12 @@
+# [0.6.0](https://github.com/bowencool/async-utils/compare/v0.4.0...v0.6.0) (2021-09-12)
+
+
+### Features
+
+* useSamePromise ([a4976c6](https://github.com/bowencool/async-utils/commit/a4976c68fba5062f70415e223fbeebb98f86f334))
+
+
+
 # [0.5.0](https://github.com/bowencool/async-utils/compare/v0.4.0...v0.5.0) (2021-09-12)
 
 
