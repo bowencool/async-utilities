@@ -12,7 +12,7 @@
     "postbuild:docs": "mv example/.vitepress/dist/ docs/",
     "prepublishOnly": "npm run build",
     "postpublish": "git push && git push --tags",
-    "version": "npm run build:docs && conventional-changelog -p angular -i CHANGELOG.md -s && git add CHANGELOG.md",
+    "version": "npm run build:docs && conventional-changelog -p angular -i CHANGELOG.md -s && git add .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "files": [
