@@ -1,8 +1,8 @@
-# Intro
+## Intro
 
 一个限制最大并发的高阶函数
 
-# Demo
+## Demo
 
 > demo 以网络请求为例，请打开 Devtool -> Network 查看效果
 
@@ -17,3 +17,12 @@ import Demo from './demo.vue'
 <<< src/concurrentAsync/demo.vue{21,29,31,39,41}
 
 </details>
+
+## Types
+
+```ts
+export default function concurrentAsync<T, P extends any[], R>(
+  fn: (this: T, ...p: P) => Promise<R>,
+  maxCount?: number,
+): (this: T, ...rawParams: P) => Promise<R>;
+```

@@ -63,7 +63,7 @@ function getComponentsSidebar() {
       // console.log(name)
       // return;
       let mdFile = `readme.md`;
-      console.log(name, mdFile);
+      // console.log(name, mdFile);
       if (fs.existsSync(`${INPUT_PATH}/${name}/${mdFile}`)) {
         const text = name.replace(/[-_]([a-z])/g, (_, $1) => $1.toUpperCase());
         const link = `/functions/${name}/${mdFile.replace(/\.md$/, '')}`;
