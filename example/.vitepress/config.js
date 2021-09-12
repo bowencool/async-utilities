@@ -6,6 +6,7 @@ const INPUT_PATH = path.resolve(__dirname, '../../src');
  * @type {import('vitepress').UserConfig}
  */
 module.exports = {
+  base: '/async-utils/',
   title: 'Async Utils',
   lang: 'zh-CN',
   description: 'Just async utils.',
