@@ -5,37 +5,37 @@
   },
   "scripts": {
     "dev": "NODE_ENV=development vue-cli-service serve",
-    "build": "NODE_ENV=production rollup --config build/rollup.config.js",
-    "build:doc": "NODE_ENV=production vue-cli-service build",
+    "build": "NODE_ENV=production rollup -c",
+    "prebuild": "rm -rf cjs es",
     "prepublishOnly": "npm run build",
-    "prettier": "prettier --write ./src/**/* && prettier --write ./example/**/*",
-    "start": "npm run dev",
+    "postpublish": "git push && git push --tags",
+    "version": "conventional-changelog -p angular -i CHANGELOG.md -s && git add CHANGELOG.md",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "core-js": "^3.12.1"
+    "core-js": "^3.17.3"
   },
   "devDependencies": {
-    "@babel/core": "^7.12.10",
-    "@babel/preset-env": "^7.12.11",
-    "@rollup/plugin-babel": "^5.2.2",
+    "@babel/core": "^7.15.5",
+    "@babel/plugin-transform-runtime": "^7.15.0",
+    "@babel/preset-env": "^7.15.6",
+    "@rollup/plugin-babel": "^5.3.0",
+    "@rollup/plugin-node-resolve": "^13.0.4",
     "@vue/cli-plugin-typescript": "~4.5.0",
     "@vue/cli-service": "^4.5.13",
-    "@vue/compiler-sfc": "^3.0.11",
-    "rollup": "^2.36.1",
+    "@vue/compiler-sfc": "^3.2.11",
+    "conventional-changelog-cli": "^2.1.1",
+    "rollup": "^2.56.3",
     "rollup-plugin-replace": "^2.2.0",
-    "rollup-plugin-terser": "^6.1.0",
-    "rollup-plugin-typescript2": "^0.27.2",
-    "typescript": "^4.3.2",
-    "vue": "^3.0.11"
+    "rollup-plugin-typescript2": "^0.30.0",
+    "typescript": "^4.4.3",
+    "vue": "^3.2.11"
   },
   "entry": "src/index.ts",
-  "main": "dist/async-utils.js",
-  "module": "dist/async-utils.esm.js",
-  "unpkg": "dist/async-utils.min.js",
-  "common": "dist/async-utils.common.js",
-  "jsdelivr": "dist/async-utils.min.js",
-  "types": "dist/index.d.ts",
+  "main": "cjs/index.js",
+  "module": "es/index.js",
+  "common": "cjs/index.js",
+  "types": "es/index.d.ts",
   "license": "MIT",
   "homepage": "https://github.com/bowencool/async-utils",
   "keywords": [
@@ -50,7 +50,7 @@
     "cancel",
     "timeout"
   ],
-  "description": "async utils ",
+  "description": "async utils",
   "author": "bowencool",
   "name": "bowen-async-utils",
   "version": "0.5.0"

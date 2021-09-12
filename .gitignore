@@ -1,7 +1,8 @@
 # compiled output
 /dist
 /node_modules
-
+/es
+/cjs
 # Logs
 logs
 *.log
