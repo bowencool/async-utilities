@@ -8,9 +8,9 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import DebounceAsync from './components/debounceAsync.vue';
-import ThrottleAsync from './components/throttleAsync.vue';
-import ConcurrentAsync from './components/concurrentAsync.vue';
+import DebounceAsync from '../src/debounceAsync/demo.vue';
+import ThrottleAsync from '../src/throttleAsync/throttleAsync.vue';
+import ConcurrentAsync from '../src/concurrentAsync/demo.vue';
 import CancelizeAsync from './components/cancelizeAsync.vue';
 
 export default defineComponent({
