@@ -8,8 +8,6 @@ A higher-order function like `debounce` that returns a new function that returns
 >
 > 需求：无论网络请求的返回顺序如何，我们只想要最后一次“发起”的请求结果
 >
-> 注释：如果说 debounce 是发送前取最后一次输入，那么 debounceAsync 就是发送后取最后一次请求对应的输出
->
 > 原文：https://github.com/bowencool/blog/issues/3
 
 ## Demo
