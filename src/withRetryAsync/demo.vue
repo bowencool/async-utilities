@@ -2,7 +2,7 @@
 import { defineComponent } from 'vue';
 import { withRetryAsync } from '..';
 
-function getApi(keywords: string) {
+function getUnstableApi(keywords: string) {
   console.log('fetching', keywords);
   return fetch(`https://httpbin.org/status/200,500,400?keywords=${keywords}`, {
     method: 'GET',
@@ -18,7 +18,7 @@ function getApi(keywords: string) {
   });
 }
 
-const autoRetryGetApi = withRetryAsync(getApi, {
+const autoRetryUnstableApi = withRetryAsync(getUnstableApi, {
   maxCount: 3,
   retryInterval: 1000,
   onRetry(i) {
@@ -29,17 +29,14 @@ const autoRetryGetApi = withRetryAsync(getApi, {
 export default defineComponent({
   setup() {
     return () => (
-      <fieldset>
-        <legend>查询场景</legend>
-        <button
-          onClick={async () => {
-            const rez = await autoRetryGetApi('abc');
-            console.log('fetched', rez);
-          }}
-        >
-          Get something same(useSamePromise)
-        </button>
-      </fieldset>
+      <button
+        onClick={async () => {
+          const rez = await autoRetryUnstableApi('abc');
+          console.log('fetched', rez);
+        }}
+      >
+        Get something unstable
+      </button>
     );
   },
 });

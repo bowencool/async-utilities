@@ -22,7 +22,7 @@ export default defineComponent({
             }
           }}
         >
-          无限制并发请求
+          无限制并发请求 No Limit
         </button>
         <button
           onClick={() => {
@@ -32,7 +32,7 @@ export default defineComponent({
             }
           }}
         >
-          限制最大2个并发请求
+          限制最大2个并发请求 Limit 2 concurrent
         </button>
         <button
           onClick={() => {
@@ -42,7 +42,7 @@ export default defineComponent({
             }
           }}
         >
-          限制最大3个并发请求
+          限制最大3个并发请求 Limit 3 concurrent
         </button>
       </>
     );

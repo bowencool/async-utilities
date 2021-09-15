@@ -16,7 +16,7 @@ export default defineComponent({
   setup() {
     return () => (
       <fieldset>
-        <legend>提交场景</legend>
+        <legend>提交场景 Submission Case</legend>
         <ul>
           <li>
             背景：为防止用户重复提交，我们通常需要维护一个 loading 变量，当

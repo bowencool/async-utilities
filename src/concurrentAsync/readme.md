@@ -1,10 +1,14 @@
 ## Intro
 
-一个限制最大并发的高阶函数
+一个限制最大（异步任务）并发的高阶函数。
+
+A higher-order function that limits the maximum (asynchronous task) concurrency.
 
 ## Demo
 
-> demo 以网络请求为例，请打开 Devtool -> Network 查看效果
+> 以下 Demo 以网络请求为例，打开 Devtool 查看效果。
+>
+> The following demo takes a network request as an example and opens Devtool to see the effect.
 
 <script setup>
 import Demo from './demo.vue'

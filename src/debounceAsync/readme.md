@@ -1,6 +1,8 @@
 ## Intro
 
-短时间内触发多次，取最后一次**触发**的结果。
+一个类似 `debounce` 的高阶函数，返回一个新函数，这个新函数返回最后一次执行的异步任务结果。
+
+A higher-order function like `debounce` that returns a new function that returns the result of the last executed asynchronous task.
 
 > 背景：网络不稳，响应时间严重不均匀，无法保证响应顺序和请求顺序一致
 >
@@ -12,7 +14,9 @@
 
 ## Demo
 
-> demo 以网络请求为例，请打开 Devtool -> Network 查看效果
+> 以下 Demo 以网络请求为例，打开 Devtool 查看效果。
+>
+> The following demo takes a network request as an example and opens Devtool to see the effect.
 
 <script setup>
 import Demo from './demo.vue'
