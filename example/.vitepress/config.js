@@ -24,9 +24,9 @@ module.exports = {
       '/': getGuideSidebar(),
     },
     nav: [
-      { text: '指南', link: '/', activeMatch: '^/$|^/guide/' },
+      { text: '指南 Guide', link: '/', activeMatch: '^/$|^/guide/' },
       {
-        text: '函数',
+        text: '函数 Functions',
         link: '/functions/index',
         activeMatch: '^/functions/',
       },
@@ -44,9 +44,9 @@ module.exports = {
 function getGuideSidebar() {
   return [
     {
-      text: '介绍',
+      text: '介绍 Intro',
       children: [
-        { text: '开始使用', link: '/guide/getting-started' },
+        { text: '开始使用 Getting started', link: '/guide/getting-started' },
         // { text: '配置', link: '/guide/configuration' },
         // { text: '贡献/开发指南', link: '/guide/contribution' },
         // { text: 'Todos', link: '/guide/todos' },
@@ -77,7 +77,7 @@ function getComponentsSidebar() {
   // return functions;
   return [
     {
-      text: '函数',
+      text: '函数 Functions',
       children: functions,
     },
   ];
