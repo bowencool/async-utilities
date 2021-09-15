@@ -12,14 +12,14 @@ import Demo from './demo.vue'
 <details>
   <summary>查看代码</summary>
 
-<<< src/cancelizeAsync/demo.vue{14,29-30,34-37}
+<<< src/abortableAsync/demo.vue{14,29-30,34-37}
 
 </details>
 
 ## Types
 
 ```ts
-export default function cancelizeAsync<T, P extends any[], R>(
+export default function abortableAsync<T, P extends any[], R>(
   fn: (this: T, ...p: P) => Promise<R>,
   opt?: {
     timeout?: number;

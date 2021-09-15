@@ -1,6 +1,6 @@
 <script lang="tsx">
 import { computed, defineComponent, reactive } from 'vue';
-import { cancelizeAsync } from '..';
+import { abortableAsync } from '..';
 
 function someAsyncTask(delay = 1000): Promise<string> {
   return new Promise((resolve) => {
@@ -31,7 +31,7 @@ export default defineComponent({
               try {
                 state.loading = true;
                 state.error = null;
-                state.data = await cancelizeAsync(someAsyncTask, {
+                state.data = await abortableAsync(someAsyncTask, {
                   timeout: 2000,
                   signal: controller.signal,
                 })(1900 + Math.floor(Math.random() * 200));

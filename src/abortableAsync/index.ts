@@ -5,11 +5,11 @@ export class TimeoutError extends Error {}
  * @author bowencool<z.bowen66@gmail.com>
  * @description 超时取消、手动取消
  */
-export default function cancelizeAsync<T, P extends any[], R>(
+export default function abortableAsync<T, P extends any[], R>(
   fn: (this: T, ...p: P) => Promise<R>,
   opt: { timeout?: number; signal?: AbortSignal } = {},
 ) {
-  return function asyncCancelized(this: T, ...args: P): Promise<R> {
+  return function abortabledAsync(this: T, ...args: P): Promise<R> {
     return new Promise((resolve, reject) => {
       let timer: ReturnType<typeof setTimeout>;
       function doAbort() {
