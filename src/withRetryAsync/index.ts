@@ -1,6 +1,6 @@
 export default function withRetryAsync<T, P extends any[], R>(
   fn: (this: T, ...p: P) => Promise<R>,
-  { maxCount = 3, retryInterval = 500 } = {},
+  { maxCount = 3, retryInterval = 500, onRetry = (i: number) => {} } = {},
 ) {
   return function withRetryedAsync(this: T, ...args: P): Promise<R> {
     return new Promise((resolve, reject) => {
@@ -11,7 +11,7 @@ export default function withRetryAsync<T, P extends any[], R>(
       execTask();
 
       function execTask() {
-        console.log('第%d次尝试', retriedCount + 1);
+        onRetry(retriedCount);
         fn.call(that, ...args)
           .then((...r) => {
             resolve(...r);

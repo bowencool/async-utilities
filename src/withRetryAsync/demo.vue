@@ -8,7 +8,7 @@ function getApi(keywords: string) {
     method: 'GET',
     mode: 'cors',
   }).then((res) => {
-    if (res.status === 200) {
+    if (res.status >= 200 && res.status < 300) {
       return {
         data: `result for ${keywords}`,
       };
@@ -18,7 +18,13 @@ function getApi(keywords: string) {
   });
 }
 
-const autoRetryGetApi = withRetryAsync(getApi);
+const autoRetryGetApi = withRetryAsync(getApi, {
+  maxCount: 3,
+  retryInterval: 1000,
+  onRetry(i) {
+    console.log('第%d次尝试', i + 1);
+  },
+});
 
 export default defineComponent({
   setup() {
