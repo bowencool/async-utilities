@@ -3,36 +3,7 @@
 > 一个异步工具库，风格以高阶函数为主。
 > [文档](https://bowencool.github.io/async-utils/)
 
-<!--
-## API
-
-| 函数            | 一句话描述                                   |
-| --------------- | -------------------------------------------- |
-| debouncedAsync  | 短时间内触发多次，取最后一次**触发**的结果。 |
-| throttleAsync   | 上一次的 promise 完成之前，不会再次触发。    |
-| concurrentAsync | 并发限制、自动排队                           |
-| abortableAsync  | 超时取消、手动取消                           | -->
-<!--
-```ts
-import { throttleAsync } from 'bowen-async-utils';
-
-function submitApi(data: object) {
-  console.log('submiting', data);
-  return fetch('https://httpbin.org/delay/1.5', {
-    body: JSON.stringify(data),
-    method: 'POST',
-    mode: 'cors',
-  });
-}
-const throttledSubmitApi = throttleAsync(submitApi);
-throttledSubmitApi(1);
-throttledSubmitApi(2);
-throttledSubmitApi(3);
-// 2、3 在 1 结束之前不会被提交
-``` -->
-
 ## TODO
 
 - [ ] 单测
-- [ ] 改个名字
-- [ ] feat: retry
+- [ ] 改个名字，实在没啥好名字，连近似的都不行
