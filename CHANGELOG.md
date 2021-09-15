@@ -1,3 +1,14 @@
+# [0.7.0](https://github.com/bowencool/async-utils/compare/v0.6.2...v0.7.0) (2021-09-15)
+
+
+### Features
+
+* onRetry ([893d944](https://github.com/bowencool/async-utils/commit/893d94476c76592210f3725c637700099920fc87))
+* rename cancelizeAsync to abortableAsync ([deef179](https://github.com/bowencool/async-utils/commit/deef179a85af7cd6f1496bdc00d84485915b3aa1))
+* withRetryAsync ([b2b98a8](https://github.com/bowencool/async-utils/commit/b2b98a8320c237a87ae0a6cd231bc4d0e089ca29))
+
+
+
 ## [0.6.3](https://github.com/bowencool/async-utils/compare/v0.6.2...v0.6.3) (2021-09-15)
 
 

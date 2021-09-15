@@ -1,0 +1,1 @@
+import{o as e,c as a,a as t}from"./app.291d2ca8.js";const l='{"title":"async-utils","description":"","frontmatter":{},"headers":[{"level":2,"title":"TODO","slug":"todo"}],"relativePath":"index.md","lastUpdated":1631717626942}',o={},i=[t('',4)];o.render=function(t,l,o,r,c,n){return e(),a("div",null,i)};export{l as __pageData,o as default};

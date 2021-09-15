@@ -1,1 +1,0 @@
-import{o as e,c as o,a as t}from"./app.547dde95.js";const a='{"title":"Todo","description":"","frontmatter":{},"relativePath":"functions/index.md","lastUpdated":1631700187107}',r={},i=[t('',2)];r.render=function(t,a,r,n,c,l){return e(),o("div",null,i)};export{a as __pageData,r as default};
