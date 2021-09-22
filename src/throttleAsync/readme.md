@@ -1,8 +1,8 @@
 ## Intro
 
-一个类似 `throttle` 的高阶函数，返回一个新函数，这个新函数返回第一次执行的异步任务结果并忽略在此期间的任何结果。
+一个类似 `throttle` 的高阶函数，返回一个新函数，这个新函数返回第一次执行的异步任务结果并忽略在此期间的任何执行。
 
-A higher-order function like `throttle` that returns a new function that returns the result of the first execution of the asynchronous task and ignores any results in the meantime.
+A higher-order function like `throttle` that returns a new function that returns the result of the first execution of the asynchronous task and ignores any executions in the meantime.
 
 换句话说，在任意时刻，仅会存在 1 个或 0 个正在执行的异步任务。
 
