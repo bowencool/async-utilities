@@ -1,9 +1,3 @@
-/**
- * @author bowencool<z.bowen66@gmail.com>
- * @description 异步节流：上一次的promise完成之前，不会再次触发。
- * @param fn
- * @param {boolean} [config.useSamePromise] pending期间，使用同一个 Promise 作为结果
- */
 export default function throttleAsync<T, P extends any[], R>(
   fn: (this: T, ...p: P) => Promise<R>,
   { useSamePromise = false } = {},

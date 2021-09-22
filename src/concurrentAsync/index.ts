@@ -1,6 +1,3 @@
-/**
- * @description 并发限制、自动排队
- */
 export default function concurrentAsync<T, P extends any[], R>(
   fn: (this: T, ...p: P) => Promise<R>,
   maxCount = 3,

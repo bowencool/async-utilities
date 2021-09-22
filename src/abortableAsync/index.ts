@@ -1,10 +1,6 @@
 export class AbortError extends Error {}
 export class TimeoutError extends Error {}
 
-/**
- * @author bowencool<z.bowen66@gmail.com>
- * @description 超时取消、手动取消
- */
 export default function abortableAsync<T, P extends any[], R>(
   fn: (this: T, ...p: P) => Promise<R>,
   opt: { timeout?: number; signal?: AbortSignal } = {},
