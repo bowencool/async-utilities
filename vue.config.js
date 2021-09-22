@@ -5,7 +5,7 @@ module.exports = {
   pages: {
     index: {
       entry: 'example/index.ts',
-      title: 'async-utils'
+      title: 'async-utilities'
     },
   },
   configureWebpack: {

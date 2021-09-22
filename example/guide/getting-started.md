@@ -1,7 +1,7 @@
 ``` bash
-yarn add bowen-async-utils
+yarn add high-order-async-utilities
 ```
 
 ``` ts
-import { throttleAsync } from 'bowen-async-utils';
+import { throttleAsync } from 'high-order-async-utilities';
 ```

@@ -15,7 +15,12 @@
 <script lang="tsx">
 import { defineComponent, ref } from 'vue';
 import { debounceAsync } from '..';
-import { HTMLElementEvent } from '../../example/utils';
+
+export type HTMLElementEvent<T extends HTMLElement> = Event & {
+  target: T;
+  // probably you might want to add the currentTarget as well
+  // currentTarget: T;
+};
 
 function searchApi(keywords: string) {
   console.log('fetching', keywords);
