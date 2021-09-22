@@ -1,3 +1,12 @@
+# [1.0.0](https://github.com/bowencool/async-utils/compare/v0.7.1...v1.0.0) (2021-09-22)
+
+
+### Features
+
+* rename ([7ee748b](https://github.com/bowencool/async-utils/commit/7ee748b7d4e312b0b2f45e3e3742c804270f6b47))
+
+
+
 ## [0.7.1](https://github.com/bowencool/async-utilities/compare/v0.7.0...v0.7.1) (2021-09-15)
 
 
