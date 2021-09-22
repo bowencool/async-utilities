@@ -73,5 +73,6 @@ import Demo from './demo.vue'
 ```ts
 export default function debounceAsync<T, P extends any[], R>(
   fn: (this: T, ...p: P) => Promise<R>,
+  ms?: number,
 ): (this: T, ...args: P) => Promise<R>;
 ```

@@ -29,7 +29,7 @@ import Demo from './demo.vue'
 ## Types
 
 ```ts
-export default function debounceAsync<T, P extends any[], R>(
+export default function debounceAsyncResult<T, P extends any[], R>(
   fn: (this: T, ...p: P) => Promise<R>,
 ): (this: T, ...args: P) => Promise<R>;
 ```
