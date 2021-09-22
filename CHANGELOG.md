@@ -1,3 +1,12 @@
+## [1.0.2](https://github.com/bowencool/async-utils/compare/v1.0.1...v1.0.2) (2021-09-22)
+
+
+### Features
+
+* **withRetryAsync:** lastFailedReason ([90fbd46](https://github.com/bowencool/async-utils/commit/90fbd46086189387080802ba6e28a0da648876a4))
+
+
+
 ## [1.0.1](https://github.com/bowencool/async-utils/compare/v1.0.0...v1.0.1) (2021-09-22)
 
 
