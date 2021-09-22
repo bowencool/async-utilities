@@ -14,7 +14,7 @@
 
 <script lang="tsx">
 import { defineComponent, ref } from 'vue';
-import { debounceAsync } from '..';
+import { debounceAsyncResult } from '..';
 
 export type HTMLElementEvent<T extends HTMLElement> = Event & {
   target: T;
@@ -33,13 +33,15 @@ function searchApi(keywords: string) {
     `suggestions3 for ${keywords}`,
   ]);
 }
-const debouncedSearchApi = debounceAsync(searchApi);
+const debouncedSearchApi = debounceAsyncResult(searchApi);
 
 export default defineComponent({
   setup() {
     const suggestions = ref<string[]>([]);
     return {
       suggestions,
+      // 这里应该用一次 debounce 或 debounceAsync, 但是与本主题无关，所以省略
+      // debounce or debounceAsync should be used here, but it is not relevant to this topic, so it is omitted
       async onInput(e: HTMLElementEvent<HTMLInputElement>) {
         // 注意在 `await debouncedSearchApi` 之前的代码仍会执行
         // Note that the code before `await debouncedSearchApi` will still execute
@@ -48,6 +50,7 @@ export default defineComponent({
         // 会在适当的时机在此处卡住
         // will get stuck here at the right time
         const rez = await debouncedSearchApi(keywords);
+
         suggestions.value = rez;
       },
     };
