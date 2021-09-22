@@ -1,14 +1,8 @@
 ## Intro
 
-一个类似 `debounce` 的高阶函数，返回一个新函数，这个新函数返回最后一次执行的异步任务结果。
+一个类似 `debounce` 的高阶函数，返回一个新函数，这个新函数返回最后一次执行的异步任务结果（执行时间过长或执行频率过高时）。
 
-A higher-order function like `debounce` that returns a new function that returns the result of the last executed asynchronous task.
-
-> 背景：网络不稳，响应时间严重不均匀，无法保证响应顺序和请求顺序一致
->
-> 需求：无论网络请求的返回顺序如何，我们只想要最后一次“发起”的请求结果
->
-> 原文：https://github.com/bowencool/blog/issues/3
+A higher-order function like `debounce` that returns a new function that returns the result of the last executed asynchronous task (when the execution takes too long or is executed too often).
 
 ## Demo
 
