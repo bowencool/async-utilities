@@ -1,3 +1,12 @@
+# [2.0.0-0](https://github.com/bowencool/async-utils/compare/v1.0.2...v2.0.0-0) (2021-09-22)
+
+
+### Features
+
+* **debounceAsyncResult:** rename debounceAsync to debounceAsyncResult ([5c49c26](https://github.com/bowencool/async-utils/commit/5c49c26763de7d8f60546edd4a111924714884be))
+
+
+
 ## [1.0.2](https://github.com/bowencool/async-utils/compare/v1.0.1...v1.0.2) (2021-09-22)
 
 
