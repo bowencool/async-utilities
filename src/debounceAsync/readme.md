@@ -24,7 +24,7 @@ import Demo from './demo.vue'
 <details>
   <summary>查看代码</summary>
 
-<<< src/debounceAsync/demo.vue{32,42}
+<<< src/debounceAsync/demo.vue{37,48}
 
 </details>
 
