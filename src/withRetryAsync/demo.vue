@@ -13,7 +13,7 @@ function getUnstableApi(keywords: string) {
         data: `result for ${keywords}`,
       };
     } else {
-      throw new Error(res.statusText);
+      throw new Error(res.statusText || `request failed with status ${res.status}`);
     }
   });
 }
@@ -21,8 +21,12 @@ function getUnstableApi(keywords: string) {
 const autoRetryUnstableApi = withRetryAsync(getUnstableApi, {
   maxCount: 3,
   retryInterval: 1000,
-  onRetry(i) {
-    console.log('第%d次尝试', i + 1);
+  onRetry(i, [lastFailedReason]) {
+    let message = lastFailedReason;
+    if (lastFailedReason instanceof Error) {
+      message = lastFailedReason.message;
+    }
+    console.log(message, `第${i + 1}次尝试...`);
   },
 });
 
