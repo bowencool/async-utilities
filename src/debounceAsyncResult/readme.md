@@ -6,7 +6,7 @@ A debounce-like higher-order function that returns a new function that returns t
 
 `debounceAsyncResult` 和 [debounceAsync](../debounceAsync/readme.md) 的区别是： `debounceAsync` 处理异步任务的执行时机。 `debounceAsyncResult` 处理已经执行的异步任务的结果。
 
-The difference between `debounceAsyncResult` and [debounceAsync](... /debounceAsync/readme.md) are: `debounceAsync` handles the timing of asynchronous task execution. `debounceAsyncResult` handles the result of an asynchronous task that has already been executed.
+The difference between `debounceAsyncResult` and [debounceAsync](../debounceAsync/readme.md) are: `debounceAsync` handles the timing of asynchronous task execution. `debounceAsyncResult` handles the result of an asynchronous task that has already been executed.
 
 ## Demo
 
