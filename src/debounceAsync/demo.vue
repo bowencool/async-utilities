@@ -41,8 +41,9 @@ export default defineComponent({
     const suggestions = ref<string[]>([]);
     return {
       suggestions,
+      // 这里应该用一次普通的debounce，但是与本主题无关，所以省略
+      // A normal debounce should be used here, but it is not relevant to this topic, so it is omitted
       async onInput(e: HTMLElementEvent<HTMLInputElement>) {
-        // 这里应该用一次普通的debounce，但是与本主题无关，所以省略
         const keywords = e.target.value;
         const rez = await debouncedSearchApi(keywords);
         suggestions.value = rez;
