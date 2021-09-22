@@ -6,10 +6,10 @@ const INPUT_PATH = path.resolve(__dirname, '../../src');
  * @type {import('vitepress').UserConfig}
  */
 module.exports = {
-  base: '/async-utils/',
-  title: 'Async Utils',
+  base: '/async-utilities/',
+  title: 'Async Utilities',
   lang: 'zh-CN',
-  description: 'Just async utils.',
+  description: 'Just async utilities.',
   // https://vitepress.vuejs.org/guide/markdown.html#advanced-configuration
   markdown: {
     lineNumbers: true,
@@ -35,7 +35,7 @@ module.exports = {
       // },
       {
         text: 'Github',
-        link: 'https://github.com/bowencool/async-utils',
+        link: 'https://github.com/bowencool/async-utilities',
       },
     ],
   },

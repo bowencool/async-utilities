@@ -4,7 +4,7 @@ import replace from 'rollup-plugin-replace';
 import { nodeResolve } from '@rollup/plugin-node-resolve';
 import pkgJson from './package.json';
 
-const name = 'asyncUtils';
+const name = 'asyncUtilities';
 const banner = `/*!
 * ${process.env.npm_package_name} v${process.env.npm_package_version}
 */`;
