@@ -1,3 +1,7 @@
+# [2.0.0-1](https://github.com/bowencool/async-utils/compare/v2.0.0-0...v2.0.0-1) (2021-09-22)
+
+
+
 # [2.0.0-0](https://github.com/bowencool/async-utils/compare/v1.0.2...v2.0.0-0) (2021-09-22)
 
 
