@@ -27,7 +27,7 @@ import Demo2 from './demo2.vue'
 <details>
   <summary>查看代码</summary>
 
-<<< src/throttleAsync/demo.vue{13,29-34}
+<<< src/throttleAsyncResult/demo.vue{13,29-34}
 
 </details>
 
@@ -35,14 +35,14 @@ import Demo2 from './demo2.vue'
 <details>
   <summary>查看代码</summary>
 
-<<< src/throttleAsync/demo2.vue{16-17}
+<<< src/throttleAsyncResult/demo2.vue{16-17}
 
 </details>
 
 ## Types
 
 ```ts
-export default function throttleAsync<T, P extends any[], R>(
+export default function throttleAsyncResult<T, P extends any[], R>(
   fn: (this: T, ...p: P) => Promise<R>,
   {
     useSamePromise,

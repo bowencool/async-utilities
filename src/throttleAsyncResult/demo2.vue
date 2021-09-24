@@ -1,6 +1,6 @@
 <script lang="tsx">
 import { defineComponent } from 'vue';
-import { throttleAsync } from '..';
+import { throttleAsyncResult } from '..';
 
 function getApi(keywords: string) {
   console.log('fetching', keywords);
@@ -13,8 +13,8 @@ function getApi(keywords: string) {
   }));
 }
 
-const throttledGetApi = throttleAsync(getApi);
-const throttledGetApi2 = throttleAsync(getApi, { useSamePromise: true });
+const throttledGetApi = throttleAsyncResult(getApi);
+const throttledGetApi2 = throttleAsyncResult(getApi, { useSamePromise: true });
 
 export default defineComponent({
   setup() {

@@ -1,6 +1,6 @@
 <script lang="tsx">
 import { defineComponent } from 'vue';
-import { throttleAsync } from '..';
+import { throttleAsyncResult } from '..';
 
 function submitApi(data: object) {
   console.log('submiting', data);
@@ -10,7 +10,7 @@ function submitApi(data: object) {
     mode: 'cors',
   });
 }
-const throttledSubmitApi = throttleAsync(submitApi);
+const throttledSubmitApi = throttleAsyncResult(submitApi);
 
 export default defineComponent({
   setup() {

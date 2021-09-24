@@ -1,4 +1,4 @@
-export default function withRetryAsync<T, P extends any[], R>(
+export function withRetryAsync<T, P extends any[], R>(
   fn: (this: T, ...p: P) => Promise<R>,
   {
     maxCount = 3,

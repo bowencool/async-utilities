@@ -1,7 +1,7 @@
 export class AbortError extends Error {}
 export class TimeoutError extends Error {}
 
-export default function abortableAsync<T, P extends any[], R>(
+export function abortableAsync<T, P extends any[], R>(
   fn: (this: T, ...p: P) => Promise<R>,
   opt: { timeout?: number; signal?: AbortSignal } = {},
 ) {

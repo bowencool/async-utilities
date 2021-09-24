@@ -1,4 +1,4 @@
-export default function concurrentAsync<T, P extends any[], R>(
+export function concurrentAsync<T, P extends any[], R>(
   fn: (this: T, ...p: P) => Promise<R>,
   maxCount = 3,
 ) {

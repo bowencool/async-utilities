@@ -1,4 +1,4 @@
-export default function debounceAsyncResult<T, P extends any[], R>(
+export function debounceAsyncResult<T, P extends any[], R>(
   fn: (this: T, ...p: P) => Promise<R>,
 ) {
   let lastFetchId = 0;

@@ -3,5 +3,5 @@ yarn add high-order-async-utilities
 ```
 
 ``` ts
-import { throttleAsync } from 'high-order-async-utilities';
+import { throttleAsyncResult } from 'high-order-async-utilities';
 ```
