@@ -13,7 +13,9 @@ function getUnstableApi(keywords: string) {
         data: `result for ${keywords}`,
       };
     } else {
-      throw new Error(res.statusText || `request failed with status ${res.status}`);
+      throw new Error(
+        res.statusText || `request failed with status ${res.status}`,
+      );
     }
   });
 }
@@ -21,12 +23,15 @@ function getUnstableApi(keywords: string) {
 const autoRetryUnstableApi = withRetryAsync(getUnstableApi, {
   maxCount: 3,
   retryInterval: 1000,
-  onRetry(i, [lastFailedReason]) {
-    let message = lastFailedReason;
-    if (lastFailedReason instanceof Error) {
-      message = lastFailedReason.message;
+  onFailed(i, [err]) {
+    let message = err;
+    if (err instanceof Error) {
+      message = err.message;
     }
-    console.log(message, `第${i + 1}次尝试...`);
+    console.log(`第${i}次失败了：`, message, );
+  },
+  onRetry(i) {
+    console.log(`第${i}次尝试...`);
   },
 });
 

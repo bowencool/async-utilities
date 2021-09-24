@@ -2,31 +2,36 @@ export function withRetryAsync<T, P extends any[], R>(
   fn: (this: T, ...p: P) => Promise<R>,
   {
     maxCount = 3,
-    retryInterval = 500,
-    onRetry = (i: number, lastFailedReason: unknown[]) => {},
+    /**
+     * @desc 每次重试之间的等待间隔时间
+     */
+    retryInterval = 1000,
+    /** 每次重试开始的回调，含第一次，第一次是1 */
+    onRetry = (i: number) => {},
+    /**
+     * @desciption 每次失败的回调
+     */
+    onFailed = (i: number, lastFailedReason: unknown[]) => {},
   } = {},
 ) {
   return function withRetryedAsync(this: T, ...args: P): Promise<R> {
     return new Promise((resolve, reject) => {
       let retriedCount = 0;
-      let lastFailedReason: unknown[] = [];
-      // let timer: ReturnType<typeof setTimeout>;
+
       const that = this;
-
       execTask();
-
       function execTask() {
-        onRetry(retriedCount, lastFailedReason);
+        onRetry(++retriedCount);
         fn.call(that, ...args)
           .then((...r) => {
             resolve(...r);
           })
           .catch((...e) => {
-            // console.log('failed');
-            if (++retriedCount >= maxCount) {
+            if (retriedCount >= maxCount) {
+              onFailed(retriedCount, e);
               reject(...e);
             } else {
-              lastFailedReason = e;
+              onFailed(retriedCount, e);
               setTimeout(execTask, retryInterval);
             }
           });
