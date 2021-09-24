@@ -1,1 +1,0 @@
-import{o as e,c as o,a}from"./app.1f15fead.js";const t='{"title":"Todo","description":"","frontmatter":{},"relativePath":"functions/index.md","lastUpdated":1632281211381}',r={},n=[a('',2)];r.render=function(a,t,r,i,d,c){return e(),o("div",null,n)};export{t as __pageData,r as default};

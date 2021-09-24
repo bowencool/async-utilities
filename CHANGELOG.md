@@ -1,3 +1,12 @@
+# [2.2.0](https://github.com/bowencool/async-utils/compare/v2.1.0...v2.2.0) (2021-09-24)
+
+
+### Features
+
+* **withRetryAsync:** onFailed,onRetry ([9dbaab3](https://github.com/bowencool/async-utils/commit/9dbaab3d6dbb8f62ef07e06a0ae9fb7488419783))
+
+
+
 # [2.1.0](https://github.com/bowencool/async-utils/compare/v2.0.0...v2.1.0) (2021-09-24)
 
 
