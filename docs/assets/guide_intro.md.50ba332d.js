@@ -1,0 +1,1 @@
+import{o as t,c as e,b as r}from"./app.1f15fead.js";const a='{"title":"","description":"","frontmatter":{},"relativePath":"guide/intro.md","lastUpdated":1631699900789}',n={},i=[r("p",null,"intro",-1)];n.render=function(r,a,n,o,d,l){return t(),e("div",null,i)};export{a as __pageData,n as default};
