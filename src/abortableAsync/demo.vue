@@ -1,5 +1,6 @@
 <script lang="tsx">
 import { computed, defineComponent, reactive } from 'vue';
+import { AbortError, TimeoutError } from '.';
 import { abortableAsync } from '..';
 
 function someAsyncTask(delay = 1000): Promise<string> {
@@ -36,6 +37,12 @@ export default defineComponent({
                   signal: controller.signal,
                 })(1900 + Math.floor(Math.random() * 200));
               } catch (error) {
+                console.log(
+                  error.name,
+                  error.message,
+                  error instanceof TimeoutError,
+                  error instanceof AbortError,
+                );
                 state.error = error;
                 state.data = '';
               } finally {

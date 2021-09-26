@@ -1,5 +1,15 @@
-export class AbortError extends Error {}
-export class TimeoutError extends Error {}
+export class AbortError extends Error {
+  constructor(message: string) {
+    super(message);
+    this.name = 'AbortError';
+  }
+}
+export class TimeoutError extends Error {
+  constructor(message: string) {
+    super(message);
+    this.name = 'TimeoutError';
+  }
+}
 
 export function abortableAsync<T, P extends any[], R>(
   fn: (this: T, ...p: P) => Promise<R>,
