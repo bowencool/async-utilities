@@ -1,3 +1,12 @@
+## [2.2.1](https://github.com/bowencool/async-utils/compare/v2.2.0...v2.2.1) (2021-09-26)
+
+
+### Features
+
+* error name ([0eb1ebb](https://github.com/bowencool/async-utils/commit/0eb1ebb14c2fe04c44fba4c3918e30ad3139e5f6))
+
+
+
 # [2.2.0](https://github.com/bowencool/async-utils/compare/v2.1.0...v2.2.0) (2021-09-24)
 
 
