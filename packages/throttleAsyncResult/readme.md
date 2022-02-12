@@ -18,19 +18,21 @@ In other words, if there is a pending promise, the next asynchronous task will n
 >
 > The following demo takes a network request as an example and opens Devtool to see the effect.
 
-<demo src="./demo.vue" />
+::: demo src="./demo.vue" title="提交场景 Submission Case" iframe iframeHeight="50"
 
-<demo src="./demo2.vue" />
+- 背景：为防止用户重复提交，我们通常需要维护一个 loading 变量，当 loading 数量多起来就难搞了（我也想偷懒）。
+- 需求：不需要写 loading，也可以去重。
+- 原文：https://github.com/bowencool/blog/issues/3
+
+:::
+
+::: demo src="./demo2.vue" title="查询场景 Query Case" iframe iframeHeight="100"
+
+- 背景：多个地方需要同一份数据，往往调用（请求）多次。
+- 需求：执行（请求）一次，返回同一个结果给多个调用方。
+
+:::
 
 ## Types
 
-```ts
-export default function throttleAsyncResult<T, P extends any[], R>(
-  fn: (this: T, ...p: P) => Promise<R>,
-  {
-    useSamePromise,
-  }?: {
-    useSamePromise?: boolean | undefined;
-  },
-): (this: T, ...args: P) => Promise<R>;
-```
+<<< es/throttleAsyncResult/index.d.ts

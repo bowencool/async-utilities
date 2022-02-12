@@ -6,23 +6,14 @@ A higher-order function that allows asynchronous tasks to support retries.
 
 ## Demo
 
-> 以下 Demo 以网络请求为例，打开 Devtool 查看效果。
->
-> The following demo takes a network request as an example and opens Devtool to see the effect.
+::: demo src="./demo.vue" iframe iframeHeight="100"
 
-<demo src="./demo.vue" />
+Demo 以网络请求为例，打开 Devtool 查看效果。
+
+This demo takes a network request as an example and opens Devtool to see the effect.
+
+:::
 
 ## Types
 
-```ts
-export default function withRetryAsync<T, P extends any[], R>(
-  fn: (this: T, ...p: P) => Promise<R>,
-  {
-    maxCount,
-    retryInterval,
-  }?: {
-    maxCount?: number | undefined;
-    retryInterval?: number | undefined;
-  },
-): (this: T, ...args: P) => Promise<R>;
-```
+<<< es/withRetryAsync/index.d.ts

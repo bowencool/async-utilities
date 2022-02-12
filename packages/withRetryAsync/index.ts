@@ -1,6 +1,7 @@
 export function withRetryAsync<T, P extends any[], R>(
   fn: (this: T, ...p: P) => Promise<R>,
   {
+    /** 最多重试次数 */
     maxCount = 3,
     /**
      * @desc 每次重试之间的等待间隔时间

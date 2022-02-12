@@ -6,16 +6,8 @@ A higher-order function that can abort asynchronous tasks by [AbortSignal](https
 
 ## Demo
 
-<demo src="./demo.vue" iframe />
+<demo src="./demo.vue" iframe iframeHeight="178" />
 
 ## Types
 
-```ts
-export default function abortableAsync<T, P extends any[], R>(
-  fn: (this: T, ...p: P) => Promise<R>,
-  opt?: {
-    timeout?: number;
-    signal?: AbortSignal;
-  },
-): (this: T, ...args: P) => Promise<R>;
-```
+<<< es/abortableAsync/index.d.ts
