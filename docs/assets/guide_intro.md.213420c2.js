@@ -1,1 +1,0 @@
-import{_ as t,b as e,o as a,f as o}from"./app.00a19c4d.js";const m='{"title":"","description":"","frontmatter":{},"relativePath":"guide/intro.md","lastUpdated":1631699900789}',r={},s=o("p",null,"intro",-1),n=[s];function c(i,_,d,p,l,f){return a(),e("div",null,n)}var h=t(r,[["render",c]]);export{m as __pageData,h as default};

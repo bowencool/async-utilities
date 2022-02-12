@@ -1,1 +1,0 @@
-import{_ as e,b as t,o as a,e as o}from"./app.00a19c4d.js";const b='{"title":"async-utilities","description":"","frontmatter":{},"headers":[{"level":2,"title":"TODO","slug":"todo"}],"relativePath":"../readme.md","lastUpdated":1632286058939}',i={},r=o("",4),s=[r];function n(c,l,d,_,h,p){return a(),t("div",null,s)}var f=e(i,[["render",n]]);export{b as __pageData,f as default};

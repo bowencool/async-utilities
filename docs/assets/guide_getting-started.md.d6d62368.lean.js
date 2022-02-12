@@ -1,1 +1,0 @@
-import{_ as s,b as n,o as e,e as a}from"./app.00a19c4d.js";const g='{"title":"","description":"","frontmatter":{},"relativePath":"guide/getting-started.md","lastUpdated":1632448598702}',t={},o=a("",2),r=[o];function p(c,i,d,l,_,u){return e(),n("div",null,r)}var k=s(t,[["render",p]]);export{g as __pageData,k as default};

@@ -1,0 +1,50 @@
+<script lang="tsx">
+  import { defineComponent } from 'vue';
+  import { withRetryAsync } from '..';
+
+  function getUnstableApi(keywords: string) {
+    console.log('fetching', keywords);
+    return fetch(`https://httpbin.org/status/200,500,400?keywords=${keywords}`, {
+      method: 'GET',
+      mode: 'cors',
+    }).then((res) => {
+      if (res.status >= 200 && res.status < 300) {
+        return {
+          data: `result for ${keywords}`,
+        };
+      } else {
+        throw new Error(res.statusText || `request failed with status ${res.status}`);
+      }
+    });
+  }
+
+  const autoRetryUnstableApi = withRetryAsync(getUnstableApi, {
+    maxCount: 3,
+    retryInterval: 1000,
+    onFailed(i, [err]) {
+      let message = err;
+      if (err instanceof Error) {
+        message = err.message;
+      }
+      console.log(`第${i}次失败了：`, message);
+    },
+    onRetry(i) {
+      console.log(`第${i}次尝试...`);
+    },
+  });
+
+  export default defineComponent({
+    setup() {
+      return () => (
+        <button
+          onClick={async () => {
+            const rez = await autoRetryUnstableApi('abc');
+            console.log('fetched', rez);
+          }}
+        >
+          Get something unstable
+        </button>
+      );
+    },
+  });
+</script>
