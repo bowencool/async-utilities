@@ -32,12 +32,9 @@ export const config: UserConfig = {
       { text: '指南 Guide', link: '/', activeMatch: '^/$|^/guide/' },
       {
         text: '函数 Functions',
-        link: '/functions/index',
+        link: '/functions/abortableAsync/readme',
         activeMatch: '^/functions/',
       },
-      // {
-      //   text: '发布日志',
-      // },
       {
         text: 'Github',
         link: 'https://github.com/bowencool/async-utilities',
@@ -45,21 +42,6 @@ export const config: UserConfig = {
     ],
   },
 };
-
-
-function getGuideSidebar() {
-  return [
-    {
-      text: '介绍 Intro',
-      children: [
-        { text: '开始使用 Getting started', link: '/guide/getting-started' },
-        // { text: '配置', link: '/guide/configuration' },
-        // { text: '贡献/开发指南', link: '/guide/contribution' },
-        // { text: 'Todos', link: '/guide/todos' },
-      ],
-    },
-  ];
-}
 
 function getComponentsSidebar() {
   let functions = [];
@@ -79,9 +61,18 @@ function getComponentsSidebar() {
         });
       }
     });
-  console.log(functions);
+  // console.log(functions);
   // return functions;
   return [
+    {
+      text: '介绍 Intro',
+      children: [
+        { text: '开始使用 Getting started', link: '/guide/getting-started' },
+        // { text: '配置', link: '/guide/configuration' },
+        // { text: '贡献/开发指南', link: '/guide/contribution' },
+        // { text: 'Todos', link: '/guide/todos' },
+      ],
+    },
     {
       text: '函数 Functions',
       children: functions,
