@@ -1,11 +1,6 @@
 import { abortableAsync, AbortError, TimeoutError } from './index';
-import sinon from 'sinon';
 
 jest.useFakeTimers();
-
-afterEach(function () {
-  sinon.restore();
-});
 
 function someAsyncTask(delay = 1000, fail?: boolean): Promise<string> {
   return new Promise((resolve, reject) => {
