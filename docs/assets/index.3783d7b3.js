@@ -1,1 +1,0 @@
-function o(l,{useSamePromise:s=!1}={}){let t=!1,e=null;return function(...u){if(t)return s&&e?e:new Promise(()=>{});{const n=l.call(this,...u).then((...r)=>(t=!1,e=null,Promise.resolve(...r))).catch((...r)=>(t=!1,e=null,Promise.reject(...r)));return e=n,t=!0,n}}}export{o as t};
