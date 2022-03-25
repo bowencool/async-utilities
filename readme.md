@@ -1,6 +1,8 @@
 # async-utilities
 
-[![Coverage Status](https://coveralls.io/repos/github/bowencool/async-utilities/badge.svg)](https://coveralls.io/github/bowencool/async-utilities)
+<!-- [![Coverage Status](https://coveralls.io/repos/github/bowencool/async-utilities/badge.svg)](https://coveralls.io/github/bowencool/async-utilities) -->
+
+<a href='https://coveralls.io/github/bowencool/async-utilities?branch=main'><img src='https://coveralls.io/repos/github/bowencool/async-utilities/badge.svg?branch=main' alt='Coverage Status' /></a>
 
 一个异步工具库，风格以高阶函数为主。
 
