@@ -10,7 +10,7 @@
     "build:docs": "NODE_ENV=production vitepress build website && npm run build:demos",
     "build:demos": "vite build -c=website/.vitepress/markdown/plugin/build-demos.vite.config.ts",
     "predev": "check-versions && ([ -d es ] || npm run build) && patch-package",
-    "coveralls": "jest --coverage --coverageReporters=text-lcov | coveralls",
+    "coveralls": "jest --coverage && coveralls < coverage/lcov.info",
     "prebuild": "check-versions && rm -rf es cjs && patch-package",
     "prebuild:docs": "npm run build && patch-package",
     "postbuild:docs": "rm -rf docs/ && mv website/.vitepress/dist/ docs/",
