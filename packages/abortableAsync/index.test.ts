@@ -35,6 +35,7 @@ describe('abortableAsync', () => {
     const p2 = fn(2000);
     jest.advanceTimersByTime(2000);
     await expect(p2).rejects.toBeInstanceOf(TimeoutError);
+    await expect(p2).rejects.toMatchObject({ name: 'TimeoutError' });
   });
   test('signal', async () => {
     // controller.abort() 只能触发一次 abort 事件
@@ -48,5 +49,6 @@ describe('abortableAsync', () => {
     jest.advanceTimersByTime(1000);
     controller.abort();
     await expect(p2).rejects.toBeInstanceOf(AbortError);
+    await expect(p2).rejects.toMatchObject({ name: 'AbortError' });
   });
 });

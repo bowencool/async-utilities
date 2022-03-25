@@ -37,7 +37,7 @@
                     signal: controller.signal,
                   })(1900 + Math.floor(Math.random() * 200));
                 } catch (error: any) {
-                  console.log(error.name, error.message, error instanceof TimeoutError, error instanceof AbortError);
+                  console.log(error.name, error instanceof TimeoutError, error instanceof AbortError);
                   state.error = error;
                   state.data = '';
                 } finally {
