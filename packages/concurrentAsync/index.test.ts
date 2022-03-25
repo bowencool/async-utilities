@@ -16,17 +16,17 @@ function someAsyncTask<T>(data: T, delay = 100, fail?: boolean): Promise<T> {
 }
 
 describe('concurrentAsync', () => {
-  // test('keep result correctly', async () => {
-  //   const con3 = concurrentAsync(someAsyncTask);
-  //   const promises = new Array(7).fill(0).map((_, i) => con3(i * 2, 10, i % 2 === 0));
-  //   for (let i = 0; i < promises.length; i++) {
-  //     if (i % 2 === 0) {
-  //       await expect(promises[i]).rejects.toBe(i * 2);
-  //     } else {
-  //       await expect(promises[i]).resolves.toBe(i * 2);
-  //     }
-  //   }
-  // });
+  test('keep result correctly', async () => {
+    const con3 = concurrentAsync(someAsyncTask);
+    const promises = new Array(7).fill(0).map((_, i) => con3(i * 2, 10, i % 2 === 0));
+    for (let i = 0; i < promises.length; i++) {
+      if (i % 2 === 0) {
+        await expect(promises[i]).rejects.toBe(i * 2);
+      } else {
+        await expect(promises[i]).resolves.toBe(i * 2);
+      }
+    }
+  });
   test('invoked when', async () => {
     jest.useFakeTimers();
     jest.spyOn(global, 'setTimeout');
