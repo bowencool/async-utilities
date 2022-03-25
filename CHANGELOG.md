@@ -1,3 +1,12 @@
+# [2.3.0](https://github.com/bowencool/async-utilities/compare/v2.2.2...v2.3.0) (2022-03-25)
+
+
+### Features
+
+* **abortableAsync:** alwaysPendingWhenAborted ([c5fcb52](https://github.com/bowencool/async-utilities/commit/c5fcb52d93b1fe0f74cd57ca2202d53f64c813ae))
+
+
+
 ## [2.2.2](https://github.com/bowencool/async-utilities/compare/v2.2.1...v2.2.2) (2022-03-25)
 
 
