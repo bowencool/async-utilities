@@ -15,7 +15,7 @@
     "prebuild:docs": "npm run build && patch-package",
     "postbuild:docs": "rm -rf docs/ && mv website/.vitepress/dist/ docs/",
     "preversion": "scripts/check-version-bump.js",
-    "version": "conventional-changelog --skip-unstable -p angular -i changelog.md -s && git add changelog.md",
+    "version": "conventional-changelog --skip-unstable -p angular -i CHANGELOG.md -s && git add CHANGELOG.md",
     "prepublishOnly": "scripts/check-dist-tag.js && npm run build",
     "postpublish": "git push && git push --tags"
   },
