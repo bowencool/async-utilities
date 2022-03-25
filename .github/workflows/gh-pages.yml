@@ -28,8 +28,8 @@ jobs:
 
       - run: yarn
       # - run: yarn run coveralls
+      - run: yarn run test
       - run: yarn run build:docs
-      - run: echo ${{ secrets.COVERALLS_REPO_TOKEN }}
 
       - name: Coveralls
         uses: coverallsapp/github-action@master
