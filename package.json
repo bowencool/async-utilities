@@ -79,7 +79,7 @@
     "vitepress": "0.21.4",
     "vue": "^3.2.26",
     "vue-tsc": "^0.29.8",
-    "yorkie": "^2"
+    "yorkie": "^2.0.0"
   },
   "peerDependencies": {},
   "main": "cjs/index.js",
