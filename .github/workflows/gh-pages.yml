@@ -2,7 +2,7 @@ name: Greeting from Mona
 on:
   push:
     branches:
-      - ci
+      - main
 
 jobs:
   build-and-deploy:
