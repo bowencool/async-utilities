@@ -27,7 +27,7 @@ jobs:
           key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
 
       - run: yarn
-      - run: yarn run coveralls
+      # - run: yarn run coveralls
       - run: yarn run build:docs
       - run: echo ${{ secrets.COVERALLS_REPO_TOKEN }}
 
