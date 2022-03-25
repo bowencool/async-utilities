@@ -1,3 +1,17 @@
+## [2.2.2](https://github.com/bowencool/async-utilities/compare/v2.2.1...v2.2.2) (2022-03-25)
+
+
+### Performance Improvements
+
+* customError name ([9a87f0f](https://github.com/bowencool/async-utilities/commit/9a87f0fd23801037410a6edc7773dd3987986baa))
+
+
+### Reverts
+
+* Revert "ci: debug" ([deb0eff](https://github.com/bowencool/async-utilities/commit/deb0eff2ac1bd2b8d0c0a02469843de6db16b22d))
+
+
+
 ## [2.2.1](https://github.com/bowencool/async-utils/compare/v2.2.0...v2.2.1) (2021-09-26)
 
 
