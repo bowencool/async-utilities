@@ -1,1 +1,0 @@
-import{_ as e,c as a,o as n,a as s}from"./app.b1299d94.js";const m='{"title":"async-utilities","description":"","frontmatter":{},"headers":[],"relativePath":"guide/getting-started.md","lastUpdated":1648180253171}',t={},r=s("",8),o=[r];function i(c,l,d,p,h,u){return n(),a("div",null,o)}var b=e(t,[["render",i]]);export{m as __pageData,b as default};
