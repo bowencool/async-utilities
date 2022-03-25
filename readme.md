@@ -20,4 +20,3 @@ import { throttleAsyncResult } from 'high-order-async-utilities';
 
 - ~~cacheAsync~~ see [memoizee](https://github.com/medikoo/memoizee#memoizing-asynchronous-functions) or [lru-pcache](https://github.com/jmendiara/lru-pcache)
 - [ ] abort fetch & xhr
-- [ ] always pending when canceled
