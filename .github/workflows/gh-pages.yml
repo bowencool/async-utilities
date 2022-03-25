@@ -3,23 +3,51 @@ on:
   push:
     branches:
       - main
+      - badge
+    tags:
+      - v**
 
 jobs:
   build-and-deploy:
     # concurrency: ci-${{ github.ref }} # Recommended if you intend to make multiple deployments in quick succession.
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/setup-node@v2
-        with:
-          node-version: '16'
-
-      - name: Checkout 🛎️
+      - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Install and Build 🔧 # This example project is built using npm and outputs the result to the 'build' folder. Replace with the commands required to build your project, or remove this step entirely if your site is pre-built.
-        run: |
-          yarn
-          yarn build:docs
+      - name: Set up node16
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16'
+          cache: 'yarn'
+
+
+      # - name: Get yarn cache directory path
+      #   id: yarn-cache-dir-path
+      #   run: |
+      #     echo "::set-output name=dir::$(yarn cache dir)"
+      #     echo "::set-output name=version::$(yarn -v)"
+
+      # - uses: actions/cache@v2
+      #   id: yarn-cache
+      #   name: Cache
+      #   with:
+      #     path: |
+      #       **/node_modules
+      #       ${{ steps.yarn-cache-dir-path.outputs.dir }}
+      #     key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+      #     restore-keys: |
+      #       ${{ runner.os }}-yarn-
+
+      - run: yarn
+      # - run: yarn run coveralls
+      - run: yarn run test
+      - run: yarn run build:docs
+
+      - name: Coveralls
+        uses: coverallsapp/github-action@master
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4.2.5
