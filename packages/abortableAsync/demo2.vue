@@ -29,20 +29,18 @@
                 if (state.loading) return;
                 // controller.abort() 只能触发一次 abort 事件，所以这里每次都新建的
                 controller = new AbortController();
-                try {
-                  state.loading = true;
-                  state.error = null;
-                  state.data = await abortableAsync(someAsyncTask, {
-                    timeout: 1500,
-                    signal: controller.signal,
-                  })(1400 + Math.floor(Math.random() * 200));
-                } catch (error: any) {
-                  console.log(error.name, error instanceof TimeoutError, error instanceof AbortError);
-                  state.error = error;
-                  state.data = '';
-                } finally {
-                  state.loading = false;
-                }
+                state.loading = true;
+                state.error = null;
+
+                // 会在适当的时机在此处卡住
+                // will get stuck here at the right time
+                state.data = await abortableAsync(someAsyncTask, {
+                  timeout: 1500,
+                  signal: controller.signal,
+                  alwaysPendingWhenAborted: true,
+                })(1400 + Math.floor(Math.random() * 200));
+                console.log('Task will never be completed once timeout or aborted');
+                state.loading = false;
               }}
               disabled={state.loading ? true : undefined}
             >

@@ -8,6 +8,12 @@ A higher-order function that can abort asynchronous tasks by [AbortSignal](https
 
 <demo src="./demo.vue" iframe iframeHeight="178" />
 
+::: demo src="./demo2.vue" title="取消或超时时丢弃结果（而不是抛出错误）。Always pending when aborted instead of rejections." iframe iframeHeight="178"
+
+如果你想重试的话，请使用 [withRetryAsync](../withRetryAsync/readme.md)。 If you want to retry, use [withRetryAsync](../withRetryAsync/readme.md).
+
+:::
+
 ## Types
 
 <<< es/abortableAsync/index.d.ts
