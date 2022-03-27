@@ -1,0 +1,1 @@
+import{_ as e,c as a,o as s,a as n}from"./app.b1299d94.js";const m='{"title":"async-utilities","description":"","frontmatter":{},"headers":[],"relativePath":"../readme.md","lastUpdated":1648382291258}',t={},o=n("",9),i=[o];function r(c,l,p,h,d,u){return s(),a("div",null,i)}var g=e(t,[["render",r]]);export{m as __pageData,g as default};
