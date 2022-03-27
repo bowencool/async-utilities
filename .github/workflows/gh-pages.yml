@@ -1,4 +1,4 @@
-name: Greeting from Mona
+name: test and deploy
 on:
   push:
     branches:
