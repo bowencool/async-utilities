@@ -8,9 +8,9 @@ A higher-order function like `throttle` that returns a new function that returns
 
 In other words, at any given moment, there will be only 1 or 0 executing asynchronous tasks.
 
-再换句话说，假如有一个 pending promise，在它结束之前不会重复执行下一个异步任务，直接返回它。
+再换句话说，假如有一个 pending promise，在它结束之前不会重复执行下一个异步任务，直接返回它或者一个`always pending promise`（根据配置中的 `useSamePromise`）。
 
-In other words, if there is a pending promise, the next asynchronous task will not be repeated until it ends, and it will be returned directly.
+In other words, if there is a pending promise, the next asynchronous task will not be repeated until it finishes, and it will be returned directly or as an `always pending promise` (according to `useSamePromise` in the configuration).
 
 ## Demo
 

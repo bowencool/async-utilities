@@ -1,8 +1,8 @@
 ## Intro
 
-一个类似 `debounce` 的高阶函数，但是接收一个异步任务。区别是在`debounceAsync`里，如果任务没有执行则会返回一个`pending promise`。
+一个类似 `debounce` 的高阶函数，但是接收一个异步任务。区别是在`debounceAsync`里，如果任务没有执行则会返回一个`always pending promise`。
 
-A higher-order function like `debounce`, but receiving an asynchronous task. The difference is that in `debounceAsync`, a `pending promise` is returned if the task is not executed.
+A higher-order function like `debounce`, but receiving an asynchronous task. The difference is that in `debounceAsync`, an `always pending promise` is returned if the task is not executed.
 
 下面两段代码的运行效果是一样的，只是风格不同：
 
