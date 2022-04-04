@@ -6,7 +6,7 @@ A higher-order function that allows asynchronous tasks to support retries.
 
 ## Demo
 
-::: demo src="./demo.vue" iframe iframeHeight="100"
+::: demo src="./demo.vue" iframe iframeHeight="200"
 
 Demo 以网络请求为例，打开 Devtool 查看效果。
 
