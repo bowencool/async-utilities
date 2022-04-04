@@ -2,6 +2,10 @@ import { abortableAsync, AbortError, TimeoutError } from './index';
 
 jest.useFakeTimers();
 
+function flushPromises() {
+  return new Promise((resolve) => setImmediate(resolve));
+}
+
 function resolveInNms(delay = 1000, fail?: boolean): Promise<string> {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
@@ -62,13 +66,18 @@ describe('abortableAsync', () => {
     jest.advanceTimersByTime(1000);
     await expect(p).resolves.toBe('The result in 1000ms');
 
-    const cb = jest.fn();
-    fn(2000).then(cb).catch(cb);
+    const resolveOrReject = jest.fn();
+    fn(2000, true).then(resolveOrReject).catch(resolveOrReject);
     jest.advanceTimersByTime(1000);
     controller.abort();
-    expect(cb).not.toHaveBeenCalled();
+
+    await flushPromises();
+    // // expect(pp).not.toComplete();
+    expect(resolveOrReject).not.toHaveBeenCalled();
+
     jest.advanceTimersByTime(1500);
-    expect(cb).not.toHaveBeenCalled();
+    await flushPromises();
+    expect(resolveOrReject).not.toHaveBeenCalled();
   });
   test('alwaysPendingWhenTimeout', async () => {
     const controller = new AbortController();
@@ -81,12 +90,15 @@ describe('abortableAsync', () => {
     jest.advanceTimersByTime(1000);
     await expect(p).resolves.toBe('The result in 1000ms');
 
-    const cb = jest.fn();
-    fn(2000).then(cb, cb);
+    const resolveOrReject = jest.fn();
+    fn(2000).then(resolveOrReject, resolveOrReject);
     jest.advanceTimersByTime(1000);
-    expect(cb).not.toHaveBeenCalled();
+    await flushPromises();
+    expect(resolveOrReject).not.toHaveBeenCalled();
+
     jest.advanceTimersByTime(1500);
+    await flushPromises();
     controller.abort();
-    expect(cb).not.toHaveBeenCalled();
+    expect(resolveOrReject).not.toHaveBeenCalled();
   });
 });
