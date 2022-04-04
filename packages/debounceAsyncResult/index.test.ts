@@ -17,7 +17,7 @@ function someAsyncTask<T>(data: T, delay = 100, fail?: boolean): Promise<T> {
   });
 }
 
-describe('debounceAsync', () => {
+describe('debounceAsyncResult', () => {
   test('keep result correctly', async () => {
     jest.useFakeTimers();
     const debounced = debounceAsyncResult(someAsyncTask);
