@@ -1,3 +1,12 @@
+# [2.4.0](https://github.com/bowencool/async-utilities/compare/v2.3.2...v2.4.0) (2022-04-04)
+
+
+### Bug Fixes
+
+* **debounceAsyncResult:** do the same for rejection as for resolution ([1f05064](https://github.com/bowencool/async-utilities/commit/1f05064b8d2975b26c8145851e18ff68fa23beeb))
+
+
+
 ## [2.3.2](https://github.com/bowencool/async-utilities/compare/v2.3.1...v2.3.2) (2022-04-04)
 
 
