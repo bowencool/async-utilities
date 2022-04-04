@@ -1,3 +1,12 @@
+## [2.3.2](https://github.com/bowencool/async-utilities/compare/v2.3.1...v2.3.2) (2022-04-04)
+
+
+### Bug Fixes
+
+* **abortableAsync:** 完善逻辑 ([62e02e9](https://github.com/bowencool/async-utilities/commit/62e02e9efaaf0bebe6a9868386be16f95d754e48))
+
+
+
 ## [2.3.1](https://github.com/bowencool/async-utilities/compare/v2.3.0...v2.3.1) (2022-03-27)
 
 
