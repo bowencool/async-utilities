@@ -34,20 +34,20 @@ describe('debounceAsync', () => {
     jest.useFakeTimers();
     const rawFn = jest.fn(someAsyncTask);
     const debounced = debounceAsync(rawFn, 10);
-    const cb = jest.fn();
+    const resolveOrReject = jest.fn();
     new Array(5).fill(0).map((_, i) =>
       debounced(i * 2, 10, i % 2 === 0)
-        .then(cb)
-        .catch(cb),
+        .then(resolveOrReject)
+        .catch(resolveOrReject),
     );
 
     expect(rawFn).not.toHaveBeenCalled();
-    expect(cb).not.toHaveBeenCalled();
+    expect(resolveOrReject).not.toHaveBeenCalled();
     jest.advanceTimersByTime(500);
     await flushPromises();
     expect(rawFn).toHaveBeenCalledTimes(1);
     expect(rawFn).lastCalledWith(8, 10, true);
-    expect(cb).toHaveBeenCalledTimes(1);
-    expect(cb).lastCalledWith(8);
+    expect(resolveOrReject).toHaveBeenCalledTimes(1);
+    expect(resolveOrReject).lastCalledWith(8);
   });
 });

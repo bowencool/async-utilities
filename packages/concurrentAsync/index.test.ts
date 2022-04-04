@@ -29,40 +29,40 @@ describe('concurrentAsync', () => {
   });
   test('invoked when', async () => {
     jest.useFakeTimers();
-    jest.spyOn(global, 'setTimeout');
+    const rawFn = jest.fn(someAsyncTask);
     // 0,200,400
     // 100,300
-    const con2 = concurrentAsync(someAsyncTask, 2);
+    const con2 = concurrentAsync(rawFn, 2);
     const promises = new Array(5).fill(0).map((_, i) => con2(i * 2, i * 100, i % 2 === 0));
 
-    expect(setTimeout).toHaveBeenCalledTimes(2);
+    expect(rawFn).toHaveBeenCalledTimes(2);
 
     jest.advanceTimersByTime(1);
     await expect(promises[0]).rejects.toBe(0);
     // next task will be created util previous promise is resolved or rejected
-    expect(setTimeout).toHaveBeenCalledTimes(3); // the 3rd task has be created and the 4th hasn't been created yet
+    expect(rawFn).toHaveBeenCalledTimes(3); // the 3rd task has be created and the 4th hasn't been created yet
 
     jest.advanceTimersByTime(50); // 51ms
-    expect(setTimeout).toHaveBeenCalledTimes(3); // no new task(4th) was created
+    expect(rawFn).toHaveBeenCalledTimes(3); // no new task(4th) was created
 
     jest.advanceTimersByTime(50); // 101ms
-    expect(setTimeout).toHaveBeenCalledTimes(3); // no new task(4th) was created
+    expect(rawFn).toHaveBeenCalledTimes(3); // no new task(4th) was created
     await expect(promises[1]).resolves.toBe(2); // the 2nd task was resolved
-    expect(setTimeout).toHaveBeenCalledTimes(4); // the 4th task was created
+    expect(rawFn).toHaveBeenCalledTimes(4); // the 4th task was created
     jest.advanceTimersByTime(50); // 151ms
-    expect(setTimeout).toHaveBeenCalledTimes(4); // no new task(5th) was created
+    expect(rawFn).toHaveBeenCalledTimes(4); // no new task(5th) was created
 
     jest.advanceTimersByTime(50); // 201ms
-    expect(setTimeout).toHaveBeenCalledTimes(4); // no new task(5th) was created
+    expect(rawFn).toHaveBeenCalledTimes(4); // no new task(5th) was created
     await expect(promises[2]).rejects.toBe(4); // the 3rd task was resolved
-    expect(setTimeout).toHaveBeenCalledTimes(5); // the 5th task was created
+    expect(rawFn).toHaveBeenCalledTimes(5); // the 5th task was created
 
     jest.advanceTimersByTime(200); // 401ms
     await expect(promises[3]).resolves.toBe(6); // the 4th task was resolved
-    expect(setTimeout).toHaveBeenCalledTimes(5); // no more task was created
+    expect(rawFn).toHaveBeenCalledTimes(5); // no more task was created
 
     jest.advanceTimersByTime(200); // 601ms
     await expect(promises[4]).rejects.toBe(8); // the 5th task was resolved
-    expect(setTimeout).toHaveBeenCalledTimes(5); // no more task was created
+    expect(rawFn).toHaveBeenCalledTimes(5); // no more task was created
   });
 });
