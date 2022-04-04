@@ -20,22 +20,22 @@ function someAsyncTask<T>(data: T, delay = 100, fail?: boolean): Promise<T> {
 describe('throttleAsyncResult', () => {
   test('keep result correctly', async () => {
     jest.useFakeTimers();
-    const debounced = throttleAsyncResult(someAsyncTask);
+    const throttled = throttleAsyncResult(someAsyncTask);
     const N = Math.random();
-    const p = debounced(N, 1);
+    const p = throttled(N, 1);
     jest.advanceTimersByTime(1000);
     await expect(p).resolves.toBe(N);
-    const p2 = debounced(N, 0, true);
+    const p2 = throttled(N, 0, true);
     jest.advanceTimersByTime(1000);
     await expect(p2).rejects.toBe(N);
   });
   test('keep result correctly with multiple calls', async () => {
     jest.useFakeTimers();
     const rawFn = jest.fn(someAsyncTask);
-    const debounced = throttleAsyncResult(rawFn);
+    const throttled = throttleAsyncResult(rawFn);
     const resolveOrReject = jest.fn();
     new Array(5).fill(0).map((_, i) =>
-      debounced(i * 2, 100 - 10 * i, i % 2 === 0)
+      throttled(i * 2, 100 - 10 * i, i % 2 === 0)
         .then(resolveOrReject)
         .catch(resolveOrReject),
     );
@@ -52,10 +52,10 @@ describe('throttleAsyncResult', () => {
   test('useSamePromise', async () => {
     jest.useFakeTimers();
     const rawFn = jest.fn(someAsyncTask);
-    const debounced = throttleAsyncResult(rawFn, { useSamePromise: true });
+    const throttled = throttleAsyncResult(rawFn, { useSamePromise: true });
     const resolveOrReject = jest.fn();
     new Array(5).fill(0).map((_, i) =>
-      debounced(i * 2, 100 - 10 * i, i % 2 === 0)
+      throttled(i * 2, 100 - 10 * i, i % 2 === 0)
         .then(resolveOrReject)
         .catch(resolveOrReject),
     );
