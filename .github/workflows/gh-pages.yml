@@ -1,4 +1,4 @@
-name: build
+name: gh-pages
 on:
   push:
     branches:
@@ -6,7 +6,6 @@ on:
 
 jobs:
   build-and-deploy:
-    # concurrency: ci-${{ github.ref }} # Recommended if you intend to make multiple deployments in quick succession.
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -17,16 +16,8 @@ jobs:
         with:
           node-version: '14'
           cache: 'yarn'
-
       - run: yarn
-      - run: yarn run test
       - run: yarn run build:docs
-
-      - name: Coveralls
-        uses: coverallsapp/github-action@master
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4.2.5
         with:
