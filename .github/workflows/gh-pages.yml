@@ -2,10 +2,10 @@ name: build
 on:
   push:
     branches:
-      - main
+      - ci
 
 jobs:
-  build-and-deploy:
+  setup:
     # concurrency: ci-${{ github.ref }} # Recommended if you intend to make multiple deployments in quick succession.
     runs-on: ubuntu-latest
     steps:
@@ -17,16 +17,25 @@ jobs:
         with:
           node-version: '14'
           cache: 'yarn'
-
       - run: yarn
-      - run: yarn run test
-      - run: yarn run build:docs
+      # - uses: actions/upload-artifact@v2
+      #   with:
+      #     name: my-artifact
+      #     path: path/to/artifact/world.txt
 
+  test:
+    needs: setup
+    steps:
+      - run: yarn run test
       - name: Coveralls
         uses: coverallsapp/github-action@master
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
 
+  build-and-deploy:
+    needs: setup
+    steps:
+      - run: yarn run build:docs
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4.2.5
         with:
