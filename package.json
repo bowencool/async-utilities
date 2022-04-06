@@ -11,7 +11,7 @@
     "build:demos": "vite build -c=website/.vitepress/markdown/plugin/build-demos.vite.config.ts",
     "predev": "check-versions && ([ -d es ] || npm run build) && patch-package",
     "test": "jest --coverage",
-    "prebuild": "check-versions && rm -rf es cjs && patch-package",
+    "prebuild": "check-versions && rm -rf es cjs umd && patch-package",
     "prebuild:docs": "npm run build && patch-package",
     "postbuild:docs": "rm -rf docs/ && mv website/.vitepress/dist/ docs/",
     "preversion": "scripts/check-version-bump.js",
@@ -21,7 +21,8 @@
   },
   "files": [
     "es",
-    "cjs"
+    "cjs",
+    "umd"
   ],
   "dependencies": {
     "core-js": "^3.21.1"
@@ -52,7 +53,6 @@
     "check-versions-in-packagejson": "^1.2.5",
     "conventional-changelog-cli": "^2.1.1",
     "copy-rich-text": "^0.2.0",
-    "core-js": "^3.20.0",
     "coveralls": "^3.1.1",
     "dayjs": "^1.11.0",
     "fs-extra": "^10.0.1",
@@ -67,7 +67,9 @@
     "postcss": "^8.4.12",
     "prettier": "^2.6.0",
     "rollup": "^2.61.1",
+    "rollup-plugin-esbuild": "^4.8.2",
     "rollup-plugin-postcss": "^4.0.2",
+    "rollup-plugin-terser": "^7.0.2",
     "rollup-plugin-typescript2": "^0.31.1",
     "rollup-plugin-vue": "^6.0.0",
     "sass": "^1.49.9",
@@ -88,6 +90,8 @@
   "peerDependencies": {},
   "main": "cjs/index.js",
   "module": "es/index.js",
+	"unpkg": "umd/index.js",
+	"jsdelivr": "umd/index.js",
   "typings": "es/index.d.ts",
   "license": "MIT",
   "homepage": "https://github.com/bowencool/async-utilities",

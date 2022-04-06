@@ -1,10 +1,6 @@
-// import esbuild from 'rollup-plugin-esbuild';
 import { resolve } from 'path';
-import vue from 'rollup-plugin-vue'; // 处理vue文件
 import babel from '@rollup/plugin-babel';
 import typescript from 'rollup-plugin-typescript2';
-import postcss from 'rollup-plugin-postcss';
-// import styles from 'rollup-plugin-styles';
 import replace from '@rollup/plugin-replace';
 import { nodeResolve } from '@rollup/plugin-node-resolve';
 import pkg from '../package.json';
@@ -17,7 +13,7 @@ const deps = Object.keys(pkg.peerDependencies || {})
   .concat(Object.keys(pkg.devDependencies))
   .concat([/node_modules/]);
 
-const genBaseConfig = ({ ts } = {}) => {
+const genBaseConfig = ({ ts, plugins = [] } = {}) => {
   /**
    * @type {import('rollup').RollupOptions}
    */
@@ -25,19 +21,13 @@ const genBaseConfig = ({ ts } = {}) => {
     external: deps,
     plugins: [
       replace({ values: replacement, preventAssignment: true }),
-      // vue({
-      //   exposeFilename: true,
-      //   // preprocessStyles: true,
-      // }),
-      // postcss({
-      //   extract: true,
-      // }),
       typescript({ ...ts, tsconfig: resolve(__dirname, '../tsconfig.build.json') }),
       babel({
         babelHelpers: 'runtime',
         skipPreflightCheck: true,
-        extensions: ['.js', '.mjs', '.jsx', '.ts', '.tsx', '.vue'],
+        extensions: ['.js', '.mjs', '.jsx', '.ts', '.tsx'],
       }),
+      ...plugins,
       nodeResolve(),
     ],
   };

@@ -10,4 +10,5 @@ storybook-static
 coverage/
 cjs/
 es/
+umd/
 docs/
