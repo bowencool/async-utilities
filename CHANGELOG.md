@@ -1,3 +1,12 @@
+# [2.5.0](https://github.com/bowencool/async-utilities/compare/v2.4.1...v2.5.0) (2022-04-06)
+
+
+### Features
+
+* add umd bundle to support cdn ([ccce23f](https://github.com/bowencool/async-utilities/commit/ccce23fd7dc047b6fad1cef3469a69b1682aa245))
+
+
+
 ## [2.4.1](https://github.com/bowencool/async-utilities/compare/v2.4.0...v2.4.1) (2022-04-05)
 
 
