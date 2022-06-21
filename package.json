@@ -118,7 +118,7 @@
   "description": "async utilities",
   "author": "bowencool",
   "name": "high-order-async-utilities",
-  "version": "2.5.1",
+  "version": "2.5.2",
   "gitHooks": {
     "pre-commit": "lint-staged && jest --onlyChanged --coverage",
     "post-merge": "jest --changedFilesWithAncestor --coverage",

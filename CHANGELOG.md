@@ -1,3 +1,12 @@
+## [2.5.2](https://github.com/bowencool/async-utilities/compare/v2.5.1...v2.5.2) (2022-06-21)
+
+
+### Bug Fixes
+
+* node version ([2c8be7f](https://github.com/bowencool/async-utilities/commit/2c8be7f7bd90f3ea89a383cf2a1ec8d43a4582cf))
+
+
+
 ## [2.5.1](https://github.com/bowencool/async-utilities/compare/v2.5.0...v2.5.1) (2022-04-06)
 
 
