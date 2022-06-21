@@ -1,8 +1,6 @@
 {
   "engines": {
-    "node": ">= 14",
-    "npm": "6 - 8",
-    "yarn": "^1.22.10"
+    "node": ">= 14"
   },
   "scripts": {
     "dev": "NODE_ENV=development vitepress dev website",
