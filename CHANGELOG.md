@@ -1,3 +1,12 @@
+## [2.5.4](https://github.com/bowencool/async-utilities/compare/v2.5.3...v2.5.4) (2022-09-08)
+
+
+### Features
+
+* rename to @bowencool/async-utilities ([5701b52](https://github.com/bowencool/async-utilities/commit/5701b521282416d862e3289794d8583edbf6b6d5))
+
+
+
 ## [2.5.3](https://github.com/bowencool/async-utilities/compare/v2.5.2...v2.5.3) (2022-06-21)
 
 
