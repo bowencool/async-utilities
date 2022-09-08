@@ -115,7 +115,7 @@
   ],
   "description": "async utilities",
   "author": "bowencool",
-  "name": "high-order-async-utilities",
+  "name": "@bowencool/async-utilities",
   "version": "2.5.3",
   "gitHooks": {
     "pre-commit": "lint-staged && jest --onlyChanged --coverage",

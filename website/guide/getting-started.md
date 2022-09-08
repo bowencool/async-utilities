@@ -7,11 +7,11 @@ An asynchronous tool library in the style of higher-order functions. [Website](h
 # Usage
 
 ```bash
-yarn add high-order-async-utilities
+yarn add @bowencool/async-utilities
 ```
 
 ```ts
-import { throttleAsyncResult } from 'high-order-async-utilities';
+import { throttleAsyncResult } from '@bowencool/async-utilities';
 ```
 
 # Todo
