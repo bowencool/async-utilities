@@ -22,7 +22,7 @@ In other words, if there is a pending promise, the next asynchronous task will n
 
 - 背景：为防止用户重复提交，我们通常需要维护一个 loading 变量，当 loading 数量多起来就难搞了（我也想偷懒）。
 - 需求：不需要写 loading，也可以去重。
-- 原文：https://github.com/bowencool/blog/issues/3
+- 原文：https://blog.bowen.cool/zh/posts/when-throttling-meets-asynchrony
 
 :::
 
