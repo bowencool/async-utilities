@@ -40,3 +40,7 @@ import { throttleAsyncResult } from '@bowencool/async-utilities';
 
 - ~~cacheAsync~~ see [memoizee](https://github.com/medikoo/memoizee#memoizing-asynchronous-functions) or [lru-pcache](https://github.com/jmendiara/lru-pcache)
 - [ ] abort fetch & xhr
+
+## License
+
+MIT

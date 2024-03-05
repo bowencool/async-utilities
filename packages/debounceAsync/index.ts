@@ -1,4 +1,7 @@
-export function debounceAsync<T, P extends any[], R>(fn: (this: T, ...p: P) => Promise<R>, ms: number = 300) {
+export function debounceAsync<T, P extends any[], R>(
+  fn: (this: T, ...p: P) => Promise<R>,
+  ms: number = 300,
+): (this: T, ...p: P) => Promise<R> {
   let timeoutId: ReturnType<typeof setTimeout>;
   return function debouncedFiltered(this: T, ...args: P): Promise<R> {
     return new Promise((resolve, reject) => {

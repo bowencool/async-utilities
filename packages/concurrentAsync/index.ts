@@ -1,4 +1,7 @@
-export function concurrentAsync<T, P extends any[], R>(fn: (this: T, ...p: P) => Promise<R>, maxCount = 3) {
+export function concurrentAsync<T, P extends any[], R>(
+  fn: (this: T, ...p: P) => Promise<R>,
+  maxCount = 3,
+): (this: T, ...p: P) => Promise<R> {
   let that: T;
 
   type Resolve = (arg: R) => void;

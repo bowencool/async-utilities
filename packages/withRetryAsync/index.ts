@@ -14,7 +14,7 @@ export function withRetryAsync<T, P extends any[], R>(
      */
     onFailed = (i: number, lastFailedReason: unknown[]) => {},
   } = {},
-) {
+): (this: T, ...p: P) => Promise<R> {
   return function withRetryedAsync(this: T, ...args: P): Promise<R> {
     return new Promise((resolve, reject) => {
       let retriedCount = 0;

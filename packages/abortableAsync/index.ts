@@ -10,7 +10,10 @@ export type AbortableOption = {
   // alwaysPendingWhenTimeout?: boolean;
 };
 
-export function abortableAsync<T, P extends any[], R>(fn: (this: T, ...p: P) => Promise<R>, opt: AbortableOption = {}) {
+export function abortableAsync<T, P extends any[], R>(
+  fn: (this: T, ...p: P) => Promise<R>,
+  opt: AbortableOption = {},
+): (this: T, ...p: P) => Promise<R> {
   return function abortabledAsync(this: T, ...args: P): Promise<R> {
     return new Promise((resolve, reject) => {
       let timer: ReturnType<typeof setTimeout> | undefined;
