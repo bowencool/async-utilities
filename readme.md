@@ -4,8 +4,7 @@
   <a href='https://github.com/bowencool/async-utilities/actions/workflows/gh-pages.yml'><img src='https://github.com/bowencool/async-utilities/actions/workflows/gh-pages.yml/badge.svg' alt='Actions Status' /></a>
   <a href='https://coveralls.io/github/bowencool/async-utilities?branch=main'><img src='https://coveralls.io/repos/github/bowencool/async-utilities/badge.svg?branch=main' alt='Coverage Status' /></a>
   <a href="https://www.npmjs.com/package/@bowencool/async-utilities"><img src="https://img.shields.io/npm/v/@bowencool/async-utilities.svg?style=flat-square" alt="npm version" /></a>
-  <!-- todo 使用新名称 -->
-  <a href="https://www.npmjs.com/package/high-order-async-utilities"><img src="https://img.shields.io/npm/dt/high-order-async-utilities.svg?style=flat-square" alt="npm downloads" /></a>
+  <a href="https://www.npmjs.com/package/@bowencool/async-utilities"><img src="https://img.shields.io/npm/dt/@bowencool/async-utilities.svg?style=flat-square" alt="npm downloads" /></a>
   <!-- <a target="_blank" rel="noopener noreferrer" href="https://npmjs.org/package/@bowencool/async-utilities"><img src="https://img.shields.io/npm/dm/@bowencool/async-utilities.svg?style=flat" alt="NPM downloads"></a> -->
   <img src="https://img.badgesize.io/https:/unpkg.com/@bowencool/async-utilities/umd/index.js?label=gzip%20size&amp;compression=gzip" alt="gzip size">
   <img src="https://img.shields.io/github/license/bowencool/async-utilities" alt="GitHub">
